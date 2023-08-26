@@ -17,6 +17,5 @@ apt install -y zsh
 apt install -y tmux
 apt install -y htop
 apt install -y net-tools
-apt install -y aria2c
 
 echo "done. now login as the user and run user.sh"
