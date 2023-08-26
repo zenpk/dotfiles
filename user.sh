@@ -1,6 +1,13 @@
 #!/bin/bash
 # this script should be run by user
 
+# apt
+sudo apt update
+sudo apt install -y zsh
+sudo apt install -y tmux
+sudo apt install -y htop
+sudo apt install -y net-tools
+
 # tmux
 cat << EOF > ~/.tmux.conf
 set -g mode-keys vi

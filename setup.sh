@@ -11,11 +11,4 @@ usermod -aG sudo "$username"
 echo "$username ALL=(ALL) NOPASSWD:ALL" | tee "/etc/sudoers.d/$username"
 echo "AllowUsers $username" | tee -a /etc/ssh/sshd_config
 
-# apt
-apt update
-apt install -y zsh
-apt install -y tmux
-apt install -y htop
-apt install -y net-tools
-
 echo "done. now login as the user and run user.sh"
