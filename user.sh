@@ -7,6 +7,8 @@ sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y htop
 sudo apt install -y net-tools
+sudo apt install -y neovim
+sudo apt upgrade
 
 # tmux
 cat << EOF > ~/.tmux.conf
