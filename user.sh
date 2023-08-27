@@ -2,13 +2,14 @@
 # this script should be run by user
 
 # apt
+sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y htop
 sudo apt install -y net-tools
 sudo apt install -y neovim
-sudo apt upgrade
+sudo apt upgrade -y
 
 # tmux
 cat << EOF > ~/.tmux.conf
