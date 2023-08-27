@@ -2,14 +2,13 @@
 # this script should be run by user
 
 # apt
-sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y htop
 sudo apt install -y net-tools
-sudo apt install -y neovim
 sudo apt upgrade -y
+sudo snap install --beta nvim --classic
 
 # tmux
 cat << EOF > ~/.tmux.conf
@@ -91,6 +90,8 @@ function gitsignssh() {
 function gitcommit() {
     git commit -m "$*"
 }
+
+export PATH="$PATH:/snap/bin/"
 
 EOF
 
