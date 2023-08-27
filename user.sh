@@ -91,7 +91,7 @@ function gitcommit() {
     git commit -m "$*"
 }
 
-export PATH="$PATH:/snap/bin/"
+export PATH="$PATH:/snap/bin"
 
 EOF
 
