@@ -11,17 +11,23 @@ sudo apt upgrade -y
 
 # tmux
 cat << EOF > ~/.tmux.conf
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
 set -g mode-keys vi
 set -g status-keys vi
 set -g mouse on
 set -g history-limit 5000
 set -g default-terminal 'tmux-256color'
+# mac
+# set -g default-terminal 'screen-256color'
 
-# switch panes using Alt-arrow without prefix
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+# vim-like pane switching
+bind -r k select-pane -U
+bind -r j select-pane -D
+bind -r h select-pane -L
+bind -r l select-pane -R
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -41,6 +47,7 @@ set -g @dracula-military-time true
 
 # should be at the bottom
 run '~/.tmux/plugins/tpm/tpm'
+
 EOF
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
