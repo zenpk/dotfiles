@@ -85,7 +85,7 @@ noremap d "_d
 noremap dd "_dd
 noremap D dd
 noremap x "_x
-noremap X "_X
+noremap X x
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap U <C-r>
