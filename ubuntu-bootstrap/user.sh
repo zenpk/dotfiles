@@ -24,6 +24,7 @@ set -g default-terminal 'tmux-256color'
 # set -g default-terminal 'screen-256color'
 
 # vim-like pane switching
+bind -r ^ last-window
 bind -r k select-pane -U
 bind -r j select-pane -D
 bind -r h select-pane -L
@@ -80,8 +81,8 @@ imap <C-c> <esc>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap U <C-r>
-nnoremap <leader>k <C-u>zz
-nnoremap <leader>j <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
 nnoremap <leader>v <C-v>
 nnoremap D "_dd
 nnoremap x "_x
