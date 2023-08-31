@@ -1,0 +1,13 @@
+{
+    "exclusionRules": [
+        {
+          "pattern": "https?://mail.google.com/*",
+          "passKeys": ""
+        },
+        {
+          "pattern": "https?://www.youtube.com/*",
+          "passKeys": ""
+        }
+    ],
+    "keyMappings": "# Insert your preferred key mappings here.\nmap h previousTab\nmap l nextTab\nunmap t\nunmap T\nunmap p"
+}

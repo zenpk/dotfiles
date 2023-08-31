@@ -8,7 +8,6 @@ sudo apt install -y tmux
 sudo apt install -y htop
 sudo apt install -y net-tools
 sudo apt upgrade -y
-sudo snap install --beta nvim --classic
 
 # tmux
 cat << EOF > ~/.tmux.conf
@@ -46,14 +45,28 @@ EOF
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # vim
+mkdir -p ~/.vim/undo
 cat << EOF > ~/.vimrc
+syntax on
+set guicursor=""
+set termguicolors
 set number
 set relativenumber
-syntax on
 set ignorecase
 set smartcase
 set incsearch
-set ts=4 sw=4
+set nohlsearch
+set scrolloff=8
+set ts=4 sw=4 sts=4 expandtab smarttab
+set smartindent
+set nowrap
+set noswapfile
+set nobackup
+set undofile
+set undodir=$HOME/.vim/undo
+set updatetime=50
+set colorcolumn=80
+set signcolumn=yes
 
 EOF
 

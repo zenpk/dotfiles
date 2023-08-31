@@ -1,0 +1,4 @@
+[core]
+	excludesfile = ~/.my_gitignore
+[alias]
+	count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
