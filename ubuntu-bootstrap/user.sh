@@ -65,8 +65,20 @@ set nobackup
 set undofile
 set undodir=$HOME/.vim/undo
 set updatetime=50
-set colorcolumn=80
 set signcolumn=yes
+set clipboard=unnamed
+
+map <space> <leader>
+imap <C-c> <esc>
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap U <C-r>
+nnoremap <leader>k <C-u>zz
+nnoremap <leader>j <C-d>zz
+nnoremap <leader>v <C-v>
+nnoremap D "_dd
+nnoremap x "_x
+nnoremap Q <nop>
 
 EOF
 
