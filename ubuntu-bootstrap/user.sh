@@ -78,14 +78,19 @@ set clipboard=unnamed
 
 map <space> <leader>
 imap <C-c> <esc>
+noremap S "_S
+noremap s "_s
+noremap d "_d
+noremap dd "_dd
+noremap D dd
+noremap x "_x
+noremap X "_X
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap U <C-r>
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
 nnoremap <leader>v <C-v>
-nnoremap D "_dd
-nnoremap x "_x
 nnoremap Q <nop>
 
 EOF
