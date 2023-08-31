@@ -78,6 +78,7 @@ set clipboard=unnamed
 
 map <space> <leader>
 imap <C-c> <esc>
+noremap c "_c
 noremap S "_S
 noremap s "_s
 noremap d "_d
