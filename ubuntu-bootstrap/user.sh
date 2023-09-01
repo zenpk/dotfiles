@@ -77,15 +77,14 @@ set signcolumn=yes
 set clipboard=unnamed
 
 map <space> <leader>
-imap <C-c> <esc>
-noremap c "_c
-noremap C "_C
-noremap s "_s
-noremap S "_S
-noremap x "_x
-noremap X "_X
-noremap d "_d
-noremap dd "_dd
+noremap c "1c
+noremap C "1C
+noremap s "1s
+noremap S "1S
+noremap x "1x
+noremap X "1X
+noremap d "1d
+noremap dd "1dd
 noremap D dd
 nnoremap n nzzzv
 nnoremap N Nzzzv
