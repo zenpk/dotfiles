@@ -56,8 +56,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 mkdir -p ~/.vim/undo
 cat << EOF > ~/.vimrc
 syntax on
-set guicursor=""
-set termguicolors
+set background=dark
 set number
 set relativenumber
 set ignorecase
