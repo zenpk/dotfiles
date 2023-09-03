@@ -17,7 +17,7 @@ bind-key C-a send-prefix
 
 set -g mode-keys vi
 set -g status-keys vi
-set -g mouse on
+set -g mouse off
 set -g history-limit 5000
 set -g default-terminal 'tmux-256color'
 # mac
