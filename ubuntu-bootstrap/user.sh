@@ -81,7 +81,7 @@ noremap C "1C
 noremap s "1s
 noremap S "1S
 noremap x "1x
-noremap X "1X
+noremap X x
 noremap d "1d
 noremap dd "1dd
 noremap D dd
