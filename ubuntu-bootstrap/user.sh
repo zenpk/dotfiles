@@ -11,26 +11,38 @@ sudo apt upgrade -y
 
 # tmux
 cat << EOF > ~/.tmux.conf
+# change prefix to C-a
 unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
+# address vim mode switching delay (http://superuser.com/a/252717/65504)
+set -s escape-time 0
+# increase tmux messages display duration from 750ms to 3s
+set -g display-time 3000
+# focus events enabled for terminals that support them
+set -g focus-events on
 set -g mode-keys vi
 set -g status-keys vi
 set -g mouse off
-set -g history-limit 5000
+set -g history-limit 10000 
 set -g default-terminal 'tmux-256color'
 # mac
 # set -g default-terminal 'screen-256color'
 
 # vim-like pane switching
-bind -r ^ last-window
 bind -r k select-pane -U
 bind -r j select-pane -D
 bind -r h select-pane -L
 bind -r l select-pane -R
 
-# List of plugins
+# easier and faster switching between next/prev window
+bind C-p previous-window
+bind C-n next-window
+# above bindings enhance the default prefix + p and prefix + n bindings by allowing you to hold Ctrl and repeat a + p/a + n (if your prefix is C-a), which is a lot quicker.
+bind a last-window
+
+# list of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -sg escape-time 1 # prevent 0;10;1c
