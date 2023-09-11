@@ -6,7 +6,6 @@ sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y htop
-sudo apt install -y net-tools
 sudo apt upgrade -y
 
 # tmux
@@ -47,7 +46,6 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -sg escape-time 1 # prevent 0;10;1c
 set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-yank'
 
 set -g @plugin 'dracula/tmux'
 set -g @dracula-plugins "cpu-usage ram-usage time"
