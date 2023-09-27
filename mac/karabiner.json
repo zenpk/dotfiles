@@ -3663,8 +3663,7 @@
           },
           "to": [
             {
-              "key_code": "spacebar",
-              "modifiers": ["left_option"]
+              "key_code": "right_shift"
             }
           ],
           "type": "basic"
