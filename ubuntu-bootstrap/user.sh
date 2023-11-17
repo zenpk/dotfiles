@@ -35,6 +35,11 @@ bind -r j select-pane -D
 bind -r h select-pane -L
 bind -r l select-pane -R
 
+# use v to trigger selection    
+bind -T copy-mode-vi v send-keys -X begin-selection
+# use y to yank current selection
+bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
 # easier and faster switching between next/prev window
 bind C-p previous-window
 bind C-n next-window
