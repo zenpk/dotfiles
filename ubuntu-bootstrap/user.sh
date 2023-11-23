@@ -140,9 +140,8 @@ function gitsignssh() {
     git config commit.gpgsign true
 }
 
-eval \$(thefuck --alias)
-
 export PATH="/snap/bin:~/.local/bin:$PATH"
+eval \$(thefuck --alias)
 
 EOF
 
