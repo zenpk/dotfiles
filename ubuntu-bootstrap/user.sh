@@ -142,7 +142,7 @@ function gitsignssh() {
 
 eval \$(thefuck --alias)
 
-export PATH="$PATH:/snap/bin"
+export PATH="/snap/bin:~/.local/bin:$PATH"
 
 EOF
 
