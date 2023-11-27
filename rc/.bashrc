@@ -13,7 +13,3 @@ function gitsignssh() {
     git config user.signingkey "~/.ssh/$1.pub"
     git config commit.gpgsign true
 }
-
-function gitcommit() {
-    git commit -m "$*"
-}
