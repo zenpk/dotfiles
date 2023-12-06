@@ -35,16 +35,19 @@ bind -r j select-pane -D
 bind -r h select-pane -L
 bind -r l select-pane -R
 
+# enter copy-mode faster
+bind -n C-u copy-mode
+
 # use v to trigger selection    
 bind -T copy-mode-vi v send-keys -X begin-selection
 # use y to yank current selection
 bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
 # easier and faster switching between next/prev window
-bind C-p previous-window
-bind C-n next-window
+bind -r C-p previous-window
+bind -r C-n next-window
 # above bindings enhance the default prefix + p and prefix + n bindings by allowing you to hold Ctrl and repeat a + p/a + n (if your prefix is C-a), which is a lot quicker.
-bind a last-window
+bind -r a last-window
 
 # list of plugins
 set -g @plugin 'tmux-plugins/tpm'
