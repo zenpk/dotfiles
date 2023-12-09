@@ -36,7 +36,7 @@ bind -r h select-pane -L
 bind -r l select-pane -R
 
 # enter copy-mode faster
-bind -n C-u copy-mode
+bind -n C-[ copy-mode
 
 # use v to trigger selection    
 bind -T copy-mode-vi v send-keys -X begin-selection
