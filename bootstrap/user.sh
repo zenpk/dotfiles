@@ -125,7 +125,7 @@ sed -i 's/^plugins=.*/plugins=(\n    git\n    zsh-syntax-highlighting\n    zsh-a
 cat << EOF >> ~/.zshrc
 
 function lazygit() {
-	git add .
+	git add --all
 	git commit -m "\$*"
 	git push
 }
