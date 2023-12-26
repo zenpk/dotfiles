@@ -103,8 +103,6 @@ noremap D dd
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap U <C-r>
-nnoremap <C-u> <C-u>zz
-nnoremap <C-d> <C-d>zz
 nnoremap <leader>v <C-v>
 nnoremap Q <nop>
 
