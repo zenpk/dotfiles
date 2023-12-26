@@ -100,11 +100,10 @@ noremap X x
 noremap d "1d
 noremap dd "1dd
 noremap D dd
-nnoremap n nzzzv
-nnoremap N Nzzzv
 nnoremap U <C-r>
-nnoremap <leader>v <C-v>
 nnoremap Q <nop>
+nnoremap <leader>v <C-v>
+nnoremap <leader>w :w !sudo tee > /dev/null %<CR>
 
 EOF
 
