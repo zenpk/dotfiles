@@ -104,8 +104,8 @@ nnoremap U <C-r>
 nnoremap Q <nop>
 nnoremap <leader>v <C-v>
 nnoremap <leader>w :w !sudo tee > /dev/null %<CR>
-nnoremap <leader>dj oconsole.log("======== debug ========");<ESC>
-nnoremap <leader>dg olog.Println("======== debug ========")<ESC>
+nnoremap <leader>dj oconsole.log("========== dededebug ==========");<ESC>
+nnoremap <leader>dg olog.Println("========== dededebug ==========")<ESC>
 
 EOF
 
