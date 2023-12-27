@@ -100,13 +100,14 @@ noremap X x
 noremap d "1d
 noremap dd "1dd
 noremap D dd
-nnoremap n nzzzv
-nnoremap N Nzzzv
 nnoremap U <C-r>
-nnoremap <C-u> <C-u>zz
-nnoremap <C-d> <C-d>zz
-nnoremap <leader>v <C-v>
 nnoremap Q <nop>
+nnoremap <leader>v <C-v>
+nnoremap <leader>w :w !sudo tee > /dev/null %<cr>
+nnoremap <leader>pj oconsole.log(``);<left><left><left>
+nnoremap <leader>pg olog.Println("")<left><left>
+nnoremap <leader>dj oconsole.log(`========== dededebug ==========`);<esc>
+nnoremap <leader>dg olog.Println("========== dededebug ==========")<esc>
 
 EOF
 
