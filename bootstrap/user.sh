@@ -103,9 +103,11 @@ noremap D dd
 nnoremap U <C-r>
 nnoremap Q <nop>
 nnoremap <leader>v <C-v>
-nnoremap <leader>w :w !sudo tee > /dev/null %<CR>
-nnoremap <leader>dj oconsole.log("========== dededebug ==========");<ESC>
-nnoremap <leader>dg olog.Println("========== dededebug ==========")<ESC>
+nnoremap <leader>w :w !sudo tee > /dev/null %<cr>
+nnoremap <leader>pj oconsole.log("");<left><left><left>
+nnoremap <leader>pg olog.Println("")<left><left>
+nnoremap <leader>dj oconsole.log("========== dededebug ==========");<esc>
+nnoremap <leader>dg olog.Println("========== dededebug ==========")<esc>
 
 EOF
 
