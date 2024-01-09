@@ -1,6 +1,8 @@
+Host *
+    IdentityFile ~/.ssh/my
+    RequestTTY yes
+
 Host my
     HostName my
-    IdentityFile ~/.ssh/my
     User my
-    RequestTTY yes
     RemoteCommand tmux new -A -s my
