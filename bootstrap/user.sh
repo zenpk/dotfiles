@@ -103,7 +103,9 @@ noremap D dd
 nnoremap U <C-r>
 nnoremap Q <nop>
 nnoremap <leader>v <C-v>
-nnoremap <leader>w :w !sudo tee > /dev/null %<cr>
+nnoremap <leader>sw :w !sudo tee > /dev/null %<cr>
+nnoremap <leader>sp :set paste<cr>
+nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<cr>
 nnoremap <leader>pt oconsole.log(``);<left><left><left>
 nnoremap <leader>pg olog.Println("")<left><left>
 nnoremap <leader>dt oconsole.log(`========== dededebug ==========`);<esc>
