@@ -4,5 +4,5 @@ Host *
 Host my
     HostName my
     User my
-    RemoteCommand tmux new -u -A -s my
+    RemoteCommand tmux new -A -s my
     RequestTTY yes
