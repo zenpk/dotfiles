@@ -99,7 +99,9 @@ noremap x "1x
 noremap X x
 noremap d "1d
 noremap dd "1dd
-noremap D dd
+noremap D "1D
+nnoremap <leader>d dd
+nnoremap <leader>D D
 nnoremap U <C-r>
 nnoremap Q <nop>
 nnoremap <leader>v <C-v>
