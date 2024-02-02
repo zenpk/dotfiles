@@ -110,8 +110,8 @@ nnoremap <leader>sp :set paste<cr>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<cr>
 nnoremap <leader>pt oconsole.log();<left><left>
 nnoremap <leader>pg ofmt.Println()<left>
-nnoremap <leader>dt oconsole.log(`========== dededebug ==========`);<esc>
-nnoremap <leader>dg ofmt.Println("========== dededebug ==========")<esc>
+nnoremap <leader>lt oconsole.log(`========== dededebug ==========`);<esc>
+nnoremap <leader>lg ofmt.Println("========== dededebug ==========")<esc>
 
 EOF
 
