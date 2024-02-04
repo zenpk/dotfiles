@@ -15,6 +15,7 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
+# set-environment -g TZ UTC
 # address vim mode switching delay (http://superuser.com/a/252717/65504)
 set -s escape-time 0
 # increase tmux messages display duration from 750ms to 3s
