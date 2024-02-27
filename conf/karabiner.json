@@ -3863,8 +3863,7 @@
           },
           "to": [
             {
-              "key_code": "spacebar",
-              "modifiers": ["left_option"]
+              "pointing_button": "button1"
             }
           ]
         }
