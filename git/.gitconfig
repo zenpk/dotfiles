@@ -1,4 +1,17 @@
+[user]
+	email = 99558412+zenpk@users.noreply.github.com
+	name = zenpk
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
 [core]
-	excludesfile = ~/.my_gitignore
+	editor = vim
+	excludesfile = $HOME/.gitignore
+[safe]
+	directory = *
+[push]
+	autoSetupRemote = true
 [alias]
 	count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
