@@ -27,6 +27,7 @@ set -g status-keys vi
 set -g mouse off
 set -g history-limit 10000 
 set -g default-terminal 'tmux-256color'
+set -ag terminal-overrides ",xterm-256color:RGB"  # correct color
 # mac
 # set -g default-terminal 'screen-256color'
 
