@@ -1,0 +1,146 @@
+{
+  "window.restoreWindows": "none",
+  "window.commandCenter": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 3000,
+  "extensions.ignoreRecommendations": true,
+
+  "git.ignoreRebaseWarning": true,
+  "git.enableSmartCommit": true,
+  "git.mergeEditor": false,
+
+  "terminal.integrated.profiles.windows": {
+    // Integrate pwsh, cmd, GitBash into terminal
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}/Sysnative/cmd.exe",
+        "${env:windir}/System32/cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "GitBash": {
+      "source": "Git Bash",
+      "icon": "terminal-bash"
+    },
+    "pwsh": {
+      // My PowerShell
+      "icon": "terminal-powershell",
+      "path": "Windows.Terminal.PowershellCore"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "pwsh", // Use my PowerShell
+
+  // "editor.formatOnType": true, // Auto format after ';'
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "on",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.wordWrap": "off", // auto next line when exceeds the screen
+  "editor.fontFamily": "'JetBrainsMonoNL Nerd Font Mono', 'JetBrains Mono', Menlo, Consolas, 'Noto Sans SC', monospace",
+  "editor.fontLigatures": false, // Convert -> to arrow etc.
+  "editor.fontSize": 13,
+  "editor.lineHeight": 22,
+  "editor.linkedEditing": true,
+  "editor.formatOnSave": false,
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 8, // workaround for vim scrolloff
+  "editor.semanticHighlighting.enabled": true,
+
+  "workbench.colorTheme": "JetMind",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.tree.indent": 16, // Make explorer indent more
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.location": "top",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "debug.console.fontSize": 13,
+  "terminal.integrated.fontSize": 13,
+  "markdown.preview.fontSize": 13,
+
+  "vim.vimrc.enable": true,
+  "vim.useSystemClipboard": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.previous"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    }
+  ],
+
+  "gopls": {
+    "ui.semanticTokens": true,
+    "formatting.gofumpt": true
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": false
+  },
+
+  "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
+  "cSpell.diagnosticLevel": "Hint",
+  "window.zoomLevel": 1,
+
+  "remote.SSH.remotePlatform": {
+    "vultr": "linux",
+    "mac": "macOS",
+    "my": "linux"
+  },
+
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
