@@ -80,7 +80,7 @@ set ignorecase
 set smartcase
 set incsearch
 set nohlsearch
-set scrolloff=8
+set scrolloff=10
 set ts=4 sw=4 sts=4 expandtab smarttab
 set smartindent
 set nowrap
