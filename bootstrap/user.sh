@@ -107,8 +107,8 @@ nnoremap <leader>D D
 nnoremap U <C-r>
 nnoremap Q <nop>
 nnoremap <leader>v <C-v>
-nnoremap <leader>sw :w !sudo tee > /dev/null %<cr>
-nnoremap <leader>sp :set paste<cr>
+nnoremap <leader>sudow :w !sudo tee > /dev/null %<cr>
+nnoremap <leader>paste :set paste<cr>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<cr>
 
 EOF
