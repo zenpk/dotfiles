@@ -16,32 +16,24 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   "terminal.integrated.profiles.windows": {
-    // Integrate pwsh, cmd, GitBash into terminal
+    // integrate pwsh, GitBash into terminal
     "PowerShell": {
       "source": "PowerShell",
       "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}/Sysnative/cmd.exe",
-        "${env:windir}/System32/cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
     },
     "GitBash": {
       "source": "Git Bash",
       "icon": "terminal-bash"
     },
     "pwsh": {
-      // My PowerShell
+      // pwsh core
       "icon": "terminal-powershell",
       "path": "Windows.Terminal.PowershellCore"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "pwsh", // Use my PowerShell
+  "terminal.integrated.defaultProfile.windows": "pwsh",
 
-  // "editor.formatOnType": true, // Auto format after ';'
+  // "editor.formatOnType": true, // auto format after ';'
   "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "on",
   "editor.acceptSuggestionOnCommitCharacter": false,
@@ -51,7 +43,7 @@
   "editor.bracketPairColorization.enabled": false,
   "editor.wordWrap": "off", // auto next line when exceeds the screen
   "editor.fontFamily": "'JetBrainsMonoNL Nerd Font Mono', 'JetBrains Mono', Menlo, Consolas, 'Noto Sans SC', monospace",
-  "editor.fontLigatures": false, // Convert -> to arrow etc.
+  "editor.fontLigatures": false, // convert -> to arrow etc.
   "editor.fontSize": 13,
   "editor.lineHeight": 22,
   "editor.linkedEditing": true,
@@ -64,10 +56,9 @@
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
-  "workbench.tree.indent": 16, // Make explorer indent more
+  "workbench.tree.indent": 16, // make the explorer indent more
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.location": "top",
   "debug.console.fontSize": 13,
   "terminal.integrated.fontSize": 13,
   "markdown.preview.fontSize": 13,
@@ -77,9 +68,27 @@
     "vscodevim.vim": 1
   },
 
+  "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "o", "i"],
+      "commands": ["editor.code.organizeImports"]
+    },
+    {
+      "before": ["<leader>", "q", "f"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      // workaround for % not supporting HTML tags
+      "before": ["<leader>", "%"],
+      "commands": ["editor.emmet.action.matchTag"]
+    },
     {
       "before": ["g", "i"],
       "commands": ["editor.action.goToImplementation"]
@@ -95,6 +104,98 @@
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
+    },
+    {
+      // [g]enerate [p]rint
+      "before": ["<leader>", "g", "p"],
+      "commands": [
+        {
+          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
+          "args": ["print"]
+        }
+      ]
+    },
+    {
+      // [g]enerate [l]og
+      "before": ["<leader>", "g", "l"],
+      "commands": [
+        {
+          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
+          "args": ["log"]
+        }
+      ]
+    },
+    {
+      // [g]enerate [e]rror
+      "before": ["<leader>", "g", "e"],
+      "commands": [
+        {
+          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
+          "args": ["error"]
+        }
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+    }
+  ],
+
+  "snippet-on-file-type.defineSnippets": [
+    {
+      "fileTypes": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue"
+      ],
+      "snippets": [
+        {
+          "name": "print",
+          "content": "console.log($1);\n"
+        },
+        {
+          "name": "log",
+          "content": "console.log(`$1`, \"background: #1e1f22; color: #bcbec4\");\n"
+        },
+        {
+          "name": "error",
+          "content": "try {\n  $1\n} catch (e) {\n  console.log(e);\n}"
+        }
+      ]
+    },
+    {
+      "fileTypes": ["go"],
+      "snippets": [
+        {
+          "name": "print",
+          "content": "fmt.Println($1)\n"
+        },
+        {
+          "name": "log",
+          "content": "fmt.Println(\"========== $1 ==========\")\n"
+        },
+        {
+          "name": "error",
+          "content": "if err != nil {\n    return err\n}\n$1"
+        }
+      ]
+    },
+    {
+      "fileTypes": ["python"],
+      "snippets": [
+        {
+          "name": "print",
+          "content": "print($1)\n"
+        },
+        {
+          "name": "log",
+          "content": "print(\"========== $1 ==========\")\n"
+        }
+      ]
     }
   ],
 
@@ -143,5 +244,11 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
   }
 }

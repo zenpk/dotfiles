@@ -93,6 +93,7 @@ set signcolumn=yes
 set clipboard=unnamed
 
 map <space> <leader>
+" sane clipboard
 noremap c "1c
 noremap C "1C
 noremap s "1s
@@ -104,12 +105,17 @@ noremap dd "1dd
 noremap D "1D
 nnoremap <leader>d dd
 nnoremap <leader>D D
+" redo
 nnoremap U <C-r>
 nnoremap Q <nop>
+" visual block
 nnoremap <leader>v <C-v>
-nnoremap <leader>sudow :w !sudo tee > /dev/null %<cr>
-nnoremap <leader>paste :set paste<cr>
-nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<cr>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
+nnoremap <leader>paste :set paste<CR>
+nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
+" fast insert
+nnoremap <CR> ciw
 
 EOF
 
