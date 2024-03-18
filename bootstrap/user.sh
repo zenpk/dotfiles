@@ -110,12 +110,11 @@ nnoremap U <C-r>
 nnoremap Q <nop>
 " visual block
 nnoremap <leader>v <C-v>
-nnoremap <leader>w :w<CR>
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
-" fast insert
-nnoremap <CR> ciw
+" enter is not useless
+nnoremap <CR> viw
 
 EOF
 

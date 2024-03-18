@@ -134,5 +134,30 @@
   {
     "key": "ctrl+j",
     "command": "-workbench.action.togglePanel"
+  },
+  // file tree
+  {
+    // add
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // delete
+    "key": "d",
+    "command": "moveFileToTrash",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // rename
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    // undo
+    "key": "u",
+    "command": "undo",
+    "when": "filesExplorerFocus && !inputFocus"
   }
 ]
