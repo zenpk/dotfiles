@@ -1,6 +1,5 @@
 {
   "window.restoreWindows": "none",
-  "window.zoomLevel": 1,
   "window.commandCenter": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -82,7 +81,7 @@
     },
     {
       "before": ["<leader>", "o", "i"],
-      "commands": ["editor.code.organizeImports"]
+      "commands": ["editor.action.organizeImports"]
     },
     {
       "before": ["<leader>", "q", "f"],
@@ -92,17 +91,31 @@
       "before": ["<leader>", "r", "n"],
       "commands": ["editor.action.rename"]
     },
-    // workaround for % not supporting HTML tags
+    {
+      "before": ["<leader>", "c", "p"],
+      "commands": ["github.copilot.interactiveEditor.generate"]
+    },
     {
       "before": ["<leader>", "%"],
       "commands": ["editor.emmet.action.matchTag"]
     },
-    { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
-    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] },
-    { "before": ["[", "d"], "commands": ["editor.action.marker.previous"] },
-    { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
     {
-      // [g]enerate [p]rint
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.previous"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
       "before": ["<leader>", "g", "p"],
       "commands": [
         {
@@ -112,7 +125,6 @@
       ]
     },
     {
-      // [g]enerate [l]og
       "before": ["<leader>", "g", "l"],
       "commands": [
         {
@@ -122,7 +134,6 @@
       ]
     },
     {
-      // [g]enerate [e]rror
       "before": ["<leader>", "g", "e"],
       "commands": [
         {
@@ -131,9 +142,14 @@
         }
       ]
     },
-    // disable weird undo/redo
-    { "before": ["u"], "command": "editor.action.undo" },
-    { "before": ["U"], "command": "editor.action.redo" }
+    {
+      "before": ["u"],
+      "command": "editor.action.undo"
+    },
+    {
+      "before": ["U"],
+      "command": "editor.action.redo"
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -153,7 +169,7 @@
       ],
       "snippets": {
         "print": "console.log($1);",
-        "log": "console.log(`$1`, \"background: #1e1f22; color: #bcbec4\");",
+        "log": "console.log(`========== $1 ==========`);",
         "error": "try {\n  $1\n} catch (e) {\n  console.log(e);\n}"
       }
     },
@@ -186,6 +202,7 @@
 
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
   "cSpell.diagnosticLevel": "Hint",
+  "window.zoomLevel": 1,
 
   "remote.SSH.remotePlatform": {
     "vultr": "linux",

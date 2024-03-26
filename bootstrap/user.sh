@@ -105,6 +105,7 @@ noremap dd "1dd
 noremap D "1D
 nnoremap <leader>d dd
 nnoremap <leader>D D
+vnoremap p "1dhp
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
