@@ -111,6 +111,8 @@ nnoremap U <C-r>
 nnoremap Q <nop>
 " visual block
 nnoremap <leader>v <C-v>
+" search and replace
+nnoremap <leader>sr :%s/\<<C-r><C-w>\>/<C-r><C-w>/g<left><left>
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
