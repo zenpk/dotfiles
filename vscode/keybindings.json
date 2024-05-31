@@ -196,5 +196,16 @@
     "key": "backspace",
     "command": "-deleteLeft",
     "when": "textInputFocus"
+  },
+  // Windows key binding plugin bugs
+  {
+    "key": "enter",
+    "command": "-workbench.action.chat.acceptInput",
+    "when": "inChatInput && textInputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-inlineChat.accept",
+    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
   }
 ]

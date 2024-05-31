@@ -1,13 +1,17 @@
 {
   "window.restoreWindows": "none",
+  "window.zoomLevel": 1,
   "window.commandCenter": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.enabled": false,
   "files.autoGuessEncoding": true,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 3000,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.git": false,
+    "**/.gitignore": false
+  },
 
   "git.ignoreRebaseWarning": true,
   "git.enableSmartCommit": true,
@@ -66,6 +70,7 @@
     "vscodevim.vim": 1
   },
 
+  "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
   "vim.useSystemClipboard": true,
@@ -75,6 +80,14 @@
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["U"],
+      "commands": ["redo"]
+    },
     {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.formatDocument"]
@@ -141,14 +154,6 @@
           "args": ["error"]
         }
       ]
-    },
-    {
-      "before": ["u"],
-      "command": "editor.action.undo"
-    },
-    {
-      "before": ["U"],
-      "command": "editor.action.redo"
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -202,7 +207,7 @@
 
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
   "cSpell.diagnosticLevel": "Hint",
-  "window.zoomLevel": 1,
+  "github.copilot.editor.enableAutoCompletions": true,
 
   "remote.SSH.remotePlatform": {
     "vultr": "linux",

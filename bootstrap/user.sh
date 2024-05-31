@@ -5,7 +5,6 @@
 sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
-sudo apt install -y htop
 sudo apt upgrade -y
 
 # tmux
