@@ -151,6 +151,7 @@ function gitsignssh() {
 }
 
 # source < (fzf --zsh)
+# eval \"\$(zoxide init zsh)\"
 
 EOF
 
