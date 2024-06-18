@@ -133,6 +133,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 sed -i 's/^plugins=.*/plugins=(\n    git\n    zsh-syntax-highlighting\n    zsh-autosuggestions\n)/' ~/.zshrc
 cat << EOF >> ~/.zshrc
+export PATH="\$HOME/.local/bin:/usr/local/go/bin:\$PATH"
 
 function lazygit() {
 	git add --all
@@ -151,7 +152,7 @@ function gitsignssh() {
 }
 
 # source < (fzf --zsh)
-# eval \"\$(zoxide init zsh)\"
+# eval "\$(zoxide init zsh)"
 
 EOF
 
