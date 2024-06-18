@@ -150,6 +150,8 @@ function gitsignssh() {
     git config commit.gpgsign true
 }
 
+# source < (fzf --zsh)
+
 EOF
 
 # ssh
