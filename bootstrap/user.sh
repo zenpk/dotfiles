@@ -108,6 +108,8 @@ vnoremap p "1dhp
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
+" yank without jump
+vnoremap y ygv<esc>
 " visual block
 nnoremap <leader>v <C-v>
 " search and replace
