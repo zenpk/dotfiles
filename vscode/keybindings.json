@@ -207,5 +207,7 @@
     "key": "enter",
     "command": "-inlineChat.accept",
     "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
-  }
+  },
+  // disable the most annoying shortcut ever
+  { "key": "ctrl+m", "command": "-editor.action.toggleTabFocusMode" }
 ]
