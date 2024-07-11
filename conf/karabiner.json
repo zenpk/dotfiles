@@ -3445,20 +3445,6 @@
           {
             "description": "My AutoHotKey",
             "manipulators": [
-              // {
-              //     "conditions": [],
-              //     "from": {
-              //         "key_code": "home"
-              //     },
-              //     "to": {
-              //         "key_code": "4",
-              //         "modifiers": [
-              //             "left_command",
-              //             "left_shift"
-              //         ]
-              //     },
-              //     "type": "basic"
-              // },
               {
                 "conditions": [],
                 "from": {
@@ -3873,6 +3859,16 @@
         },
         {
           "from": {
+            "key_code": "home"
+          },
+          "to": [
+            {
+              "pointing_button": "button2"
+            }
+          ]
+        },
+        {
+          "from": {
             "key_code": "keypad_num_lock"
           },
           "to": [
@@ -3913,18 +3909,6 @@
           "to": [
             {
               "pointing_button": "button1"
-            }
-          ]
-        },
-        {
-          "from": {
-            "key_code": "home"
-          },
-          "to": [
-            {
-              "mouse_key": {
-                "x": 1536
-              }
             }
           ]
         }
