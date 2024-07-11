@@ -1,2 +1,4 @@
-myfiles/
-*.local
+**/myfiles/
+**/*.local
+**/node_modules/
+**/dist/
