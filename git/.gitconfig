@@ -8,7 +8,7 @@
 	clean = git-lfs clean -- %f
 [core]
 	editor = vim
-	excludesfile = $HOME/.gitignore
+	excludesFile = $HOME/.gitignore # change this to absolute path
 [safe]
 	directory = *
 [push]
