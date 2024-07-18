@@ -1,7 +1,8 @@
 # hold key
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 2
+defaults write -g KeyRepeat -int 3
 
 # clear proxy
 networksetup -setwebproxystate Wi-Fi off
