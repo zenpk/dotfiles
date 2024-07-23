@@ -3901,16 +3901,6 @@
               }
             }
           ]
-        },
-        {
-          "from": {
-            "key_code": "right_command"
-          },
-          "to": [
-            {
-              "pointing_button": "button1"
-            }
-          ]
         }
       ],
       "virtual_hid_keyboard": {
