@@ -17,5 +17,7 @@
 	updateRefs = true
 [alias]
     sw = "!git checkout $(git branch -a | fzf | xargs)"
+    bd = "!git branch -d $(git branch -a | fzf | xargs)"
+    bD = "!git branch -D $(git branch -a | fzf | xargs)"
     lg = "!git log --graph --decorate --oneline --all"
 	count-lines = "!git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
