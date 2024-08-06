@@ -153,7 +153,7 @@ function gitsignssh() {
     git config commit.gpgsign true
 }
 
-# source < (fzf --zsh)
+# source <(fzf --zsh)
 # eval "\$(zoxide init zsh)"
 
 EOF
