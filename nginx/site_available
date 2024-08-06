@@ -1,0 +1,59 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	server_name example.com *.example.com;
+	return 301 https://$host$request_uri;
+}
+
+server {
+	include /etc/nginx/shared_ssl.conf;
+
+	server_name auth.example.com;
+
+	root /home/frontend/dist;
+
+	index index.html;
+
+	location /api/ {
+		proxy_pass http://localhost:3000/;
+	}
+
+	location / {
+		try_files $uri /index.html =404;
+	}
+}
+
+server {
+	include /etc/nginx/shared_ssl.conf;
+
+	server_name ws.example.com;
+
+	root /home/frontend/dist;
+
+	index index.html;
+
+	client_max_body_size 100M;
+
+	location / {
+		try_files $uri /index.html =404;
+	}
+
+	location /sw.js {
+		add_header Cache-Control no-cache;
+		expires off;
+		etag off;
+	}
+
+	location /ws {
+		proxy_pass http://localhost:3001;
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_read_timeout 600s;
+
+		proxy_redirect off;
+		proxy_intercept_errors on;
+		error_page 400 = https://google.com/;
+	}
+}
