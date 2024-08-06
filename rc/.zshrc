@@ -17,7 +17,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 function lazygit() {
-	git add .
+	git add --all
 	git commit -m "$*"
 	git push
 }
