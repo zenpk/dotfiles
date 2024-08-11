@@ -9,3 +9,7 @@ PgDn::WheelDown
 ; CapsLock::LCtrl
 ; NumLock::#Space
 ; RAlt::^+1
+
+; win+left -> win+ctrl+left
+; #Left::#^Left
+; #Right::#^Right
