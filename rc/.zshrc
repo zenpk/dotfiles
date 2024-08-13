@@ -34,6 +34,9 @@ function gitsignssh() {
 
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 
+SAVEHIST=1000  # Save most-recent 1000 lines
+HISTFILE=~/.zsh_history
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

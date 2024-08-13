@@ -137,6 +137,9 @@ sed -i 's/^plugins=.*/plugins=(\n    git\n    zsh-syntax-highlighting\n    zsh-a
 cat << EOF >> ~/.zshrc
 export PATH="\$HOME/.local/bin:/usr/local/go/bin:\$PATH"
 
+SAVEHIST=1000  # Save most-recent 1000 lines
+HISTFILE=~/.zsh_history
+
 function lazygit() {
 	git add --all
 	git commit -m "\$*"
