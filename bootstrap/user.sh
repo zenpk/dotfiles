@@ -14,11 +14,14 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 
+set -sg escape-time 10 # prevent 0;10;1c
 # set-environment -g TZ UTC
 # address vim mode switching delay (http://superuser.com/a/252717/65504)
 set -s escape-time 0
 # increase tmux messages display duration from 750ms to 3s
 set -g display-time 3000
+# refresh 'status-left' and 'status-right' more often, from every 15s to 5s
+set -g status-interval 5
 # focus events enabled for terminals that support them
 set -g focus-events on
 set -g mode-keys vi
@@ -49,8 +52,6 @@ bind -r a last-window
 
 # list of plugins
 set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -sg escape-time 1 # prevent 0;10;1c
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 set -g @plugin 'dracula/tmux'
