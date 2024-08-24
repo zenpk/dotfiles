@@ -31,6 +31,11 @@
     "command": "-toggleSuggestionDetails",
     "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
   },
+  {
+    "key": "ctrl+k",
+    "command": "-extension.vim_ctrl+k",
+    "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+  },
   // copilot uses too much ctrl+i
   {
     "key": "ctrl+i",
@@ -102,7 +107,7 @@
     "command": "-editor.action.indentLines",
     "when": "editorTextFocus && !editorReadonly"
   },
-  // pn to up and down
+  // ctrl+p/n to prev and next
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
@@ -191,23 +196,117 @@
     "command": "undo",
     "when": "filesExplorerFocus && !inputFocus"
   },
-  // fix backspace issue
   {
-    "key": "backspace",
-    "command": "-deleteLeft",
-    "when": "textInputFocus"
-  },
-  // Windows key binding plugin bugs
-  {
-    "key": "enter",
-    "command": "-workbench.action.chat.acceptInput",
-    "when": "inChatInput && textInputFocus"
+    // cut
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
-    "key": "enter",
-    "command": "-inlineChat.accept",
-    "when": "inlineChatFocused && inlineChatHasProvider && inlineChatVisible && !inlineChatEmpty"
+    // copy
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    // paste
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   // disable the most annoying shortcut ever
-  { "key": "ctrl+m", "command": "-editor.action.toggleTabFocusMode" }
+  {
+    "key": "ctrl+m",
+    "command": "-editor.action.toggleTabFocusMode"
+  },
+  // Windows
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.quickOpenView"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.focusThirdEditorGroup"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "workbench.action.focusFourthEditorGroup"
+  },
+  {
+    "key": "ctrl+5",
+    "command": "workbench.action.focusFifthEditorGroup"
+  },
+  {
+    "key": "ctrl+6",
+    "command": "workbench.action.focusSixthEditorGroup"
+  },
+  {
+    "key": "ctrl+7",
+    "command": "workbench.action.focusSeventhEditorGroup"
+  },
+  {
+    "key": "ctrl+8",
+    "command": "workbench.action.focusEighthEditorGroup"
+  },
+  {
+    "key": "ctrl+9",
+    "command": "workbench.action.lastEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    "when": "!activeEditorGroupEmpty"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
 ]
