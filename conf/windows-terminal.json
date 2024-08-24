@@ -4,6 +4,35 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "keys": "pgdn"
+        },
+        {
+            "command": 
+            {
+                "action": "nextTab"
+            },
+            "keys": "ctrl+tab"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "pgup"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 0
+            },
+            "keys": "ctrl+t"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
@@ -184,27 +213,53 @@
             "keys": "ctrl+shift+m"
         },
         {
-            "command": "find"
+            "command": "unbound",
+            "keys": "ctrl+shift+1"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            }
+            "command": "unbound",
+            "keys": "ctrl+shift+9"
         },
         {
-            "command": 
-            {
-                "action": "nextTab"
-            },
-            "keys": "ctrl+tab"
+            "command": "unbound",
+            "keys": "ctrl+shift+8"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+7"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+6"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+5"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+4"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+3"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+2"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+enter"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+f4"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{00000000-0000-0000-ba54-000000000002}",
+    "defaultProfile": "{00000000-0000-0000-a000-000000000001}",
     "language": "en-US",
     "newTabMenu": 
     [
@@ -232,46 +287,29 @@
         "list": 
         [
             {
-                "commandline": "%PROGRAMFILES%/Git/usr/bin/bash.exe -i -l",
-                "guid": "{00000000-0000-0000-ba54-000000000002}",
-                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "name": "Git Bash",
-                "startingDirectory": "D:/git"
-            },
-            {
-                "elevate": true,
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
+                "guid": "{00000000-0000-0000-a000-000000000001}",
                 "hidden": false,
+                "icon": "C:/Program Files/PowerShell/7/assets/Powershell_black.ico",
                 "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore",
                 "startingDirectory": "D:/download"
             },
             {
-                "commandline": "ssh my",
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a401234}",
-                "name": "my"
+                "commandline": "%PROGRAMFILES%/Git/usr/bin/bash.exe -i -l",
+                "guid": "{00000000-0000-0000-a000-000000000002}",
+                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "D:/download"
             },
             {
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "guid": "{00000000-0000-0000-b000-000000000001}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "guid": "{00000000-0000-0000-b000-000000000002}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
             }
         ]
     },
