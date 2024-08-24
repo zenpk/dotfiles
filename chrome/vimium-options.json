@@ -1,13 +1,22 @@
 {
-    "exclusionRules": [
-        {
-          "pattern": "https?://mail.google.com/*",
-          "passKeys": ""
-        },
-        {
-          "pattern": "https?://www.youtube.com/*",
-          "passKeys": ""
-        }
-    ],
-    "keyMappings": "# Insert your preferred key mappings here.\nmap h previousTab\nmap l nextTab\nunmap t\nunmap T\nunmap p"
+  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap gg scrollToTop\nmap G scrollToBottom\nmap yy copyCurrentUrl\nmap i enterInsertMode\nmap f LinkHints.activateMode\nmap F LinkHints.activateModeToOpenInNewTab\nmap m Marks.activateCreateMode\nmap ` Marks.activateGotoMode\nmap t Vomnibar.activateTabSelection\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\nmap H goBack\nmap L goForward\nmap h previousTab\nmap l nextTab\nmap ^ visitPreviousTab\nmap <a-p> togglePinTab\nmap <a-m> toggleMuteTab\nmap ? showHelp",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "f",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.soundslice.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://coderbyte.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://hackerrank.com/*"
+    }
+  ]
 }
