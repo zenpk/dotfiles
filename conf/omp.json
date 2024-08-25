@@ -23,7 +23,7 @@
         {
           "type": "git",
           "style": "plain",
-          "template": "{{ .HEAD }}{{ if or .Working.Changed .Staging.Changed }}*{{ end }}{{ if .Behind }}‚Üì{{ end}}{{ if .Ahead }}‚Üë{{ end }} ",
+          "template": "{{ .HEAD }}{{ if or .Working.Changed .Staging.Changed }}*{{ end }}{{ if .Behind }}ø{{ end}}{{ if .Ahead }}ø{{ end }} ",
           "background": "",
           "foreground": "#6c6c6c",
           "properties": {
@@ -36,9 +36,9 @@
         {
           "type": "text",
           "style": "plain",
-          "template": "‚ùØ ",
+          "template": "ø ",
           "background": "",
-          "foreground": "#c678dd",
+          "foreground": "#98c379",
           "Text": "",
           "Duration": 0,
           "NameLength": 0
@@ -48,17 +48,17 @@
   ],
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#c678dd",
-    "template": "‚ùØ "
+    "foreground": "#98c379",
+    "template": "ø "
   },
   "valid_line": {
     "background": "transparent",
-    "foreground": "#c678dd",
-    "template": "‚ùØ "
+    "foreground": "#98c379",
+    "template": "ø "
   },
   "error_line": {
-    "background": "#e06c75",
-    "foreground": "#ffffff",
-    "template": "‚ùØ "
+    "background": "transparent",
+    "foreground": "#e06c75",
+    "template": "ø "
   }
 }
