@@ -45,6 +45,10 @@ function proxyoff {
     Remove-Item env:https_proxy
 }
 
+function openhistory {
+    code (Get-PSReadLineOption).HistorySavePath
+}
+
 Set-Alias -Name ll -Value ls
 Set-Alias -Name l -Value ls
 
