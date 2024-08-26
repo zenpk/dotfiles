@@ -52,7 +52,6 @@ function openhistory {
 Set-Alias -Name ll -Value ls
 Set-Alias -Name l -Value ls
 
-Set-PSReadlineOption -EditMode vi
 Set-PSReadLineKeyHandler -Key Ctrl+a -Function BeginningOfLine
 Set-PSReadLineKeyHandler -Key Ctrl+e -Function EndOfLine
 Set-PSReadLineKeyHandler -Key Alt+f -Function ForwardWord

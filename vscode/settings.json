@@ -9,7 +9,7 @@
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/.git": false,
+    "**/.git": true,
     "**/.gitignore": false
   },
 
@@ -79,6 +79,9 @@
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.color": "rgba(153, 187, 221, 0.5)",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["u"],
@@ -105,10 +108,6 @@
       "commands": ["editor.action.rename"]
     },
     {
-      "before": ["<leader>", "c", "p"],
-      "commands": ["github.copilot.interactiveEditor.generate"]
-    },
-    {
       "before": ["<leader>", "%"],
       "commands": ["editor.emmet.action.matchTag"]
     },
@@ -127,6 +126,22 @@
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["m"],
+      "commands": ["bookmarks.toggleLabeled"]
+    },
+    {
+      "before": ["`"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": [
+        {
+          "command": "find-it-faster.findWithinFiles",
+        }
+      ]
     },
     {
       "before": ["<leader>", "g", "p"],
@@ -195,6 +210,18 @@
     }
   ],
 
+  "find-it-faster.general.useTerminalInEditor": false,
+  "find-it-faster.findWithinFiles.previewCommand": "bat --decorations=always -n --color=always {1} --highlight-line {2}",
+  "find-it-faster.findFiles.previewCommand": "bat --decorations=always --color=always --plain {}",
+  "find-it-faster.general.batTheme": "OneHalfDark",
+  "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
+  "cSpell.diagnosticLevel": "Hint",
+  "github.copilot.editor.enableAutoCompletions": true,
+
+  "yaclock.prefix": "",
+  "yaclock.padHour24": true,
+  "yaclock.showDate": true,
+
   "gopls": {
     "ui.semanticTokens": true,
     "formatting.gofumpt": true
@@ -204,10 +231,6 @@
     "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": false
   },
-
-  "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
-  "cSpell.diagnosticLevel": "Hint",
-  "github.copilot.editor.enableAutoCompletions": true,
 
   "remote.SSH.remotePlatform": {
     "vultr": "linux",
@@ -222,6 +245,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
@@ -247,5 +273,6 @@
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": []
-  }
+  },
+  "redhat.telemetry.enabled": false
 }

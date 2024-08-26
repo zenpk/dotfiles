@@ -225,21 +225,8 @@
     "command": "workbench.action.showCommands"
   },
   {
-    "key": "ctrl+e",
-    "command": "workbench.action.quickOpen"
-  },
-  {
     "key": "ctrl+q",
     "command": "workbench.action.quickOpenView"
-  },
-  {
-    "key": "ctrl+shift+f",
-    "command": "workbench.action.findInFiles"
-  },
-  {
-    "key": "ctrl+shift+f",
-    "command": "workbench.view.search",
-    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
   {
     "key": "ctrl+w",
@@ -309,4 +296,22 @@
     "command": "editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
   },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "alt+e",
+    "command": "workbench.action.quickOpen"
+  },
+  // find it faster
+  {
+    "key": "ctrl+e",
+    "command": "find-it-faster.findFiles"
+  }
 ]
