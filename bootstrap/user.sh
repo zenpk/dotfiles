@@ -153,6 +153,7 @@ function gitsignssh() {
 }
 
 # source <(fzf --zsh)
+bindkey "^q" fzf-cd-widget
 
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 
