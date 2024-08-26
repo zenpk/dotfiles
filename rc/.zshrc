@@ -34,9 +34,7 @@ function gitsignssh() {
     git config commit.gpgsign true
 }
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
 
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 
