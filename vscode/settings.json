@@ -19,22 +19,18 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   "terminal.integrated.profiles.windows": {
-    // integrate pwsh and GitBash into terminal
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "GitBash": {
+    "Git Bash": {
       "source": "Git Bash",
       "icon": "terminal-bash"
     },
     "pwsh": {
-      // pwsh core
       "icon": "terminal-powershell",
       "path": "Windows.Terminal.PowershellCore"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "pwsh",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
 
   "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "on",

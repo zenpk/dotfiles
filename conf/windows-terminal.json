@@ -291,19 +291,19 @@
         "list": 
         [
             {
-                "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
+                "commandline": "%PROGRAMFILES%/Git/usr/bin/bash.exe -i -l",
                 "guid": "{00000000-0000-0000-a000-000000000001}",
+                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "D:/"
+            },
+            {
+                "commandline": "C:/Program Files/PowerShell/7/pwsh.exe",
+                "guid": "{00000000-0000-0000-a000-000000000002}",
                 "hidden": false,
                 "icon": "C:/Program Files/PowerShell/7/assets/Powershell_black.ico",
                 "name": "PowerShell",
-                "startingDirectory": "D:/download"
-            },
-            {
-                "commandline": "%PROGRAMFILES%/Git/usr/bin/bash.exe -i -l",
-                "guid": "{00000000-0000-0000-a000-000000000002}",
-                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "name": "Git Bash",
-                "startingDirectory": "D:/download"
+                "startingDirectory": "D:/"
             },
             {
                 "guid": "{00000000-0000-0000-b000-000000000001}",

@@ -6,8 +6,6 @@ oh-my-posh init pwsh --config ~/omp.json | Invoke-Expression
 Import-Module -Name PSReadLine
 Import-Module -Name PSFzf
 
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
 function lazygit {
     param(
         [string]$msg
@@ -54,6 +52,7 @@ Set-Alias -Name l -Value ls
 
 Set-PSReadLineKeyHandler -Key Ctrl+a -Function BeginningOfLine
 Set-PSReadLineKeyHandler -Key Ctrl+e -Function EndOfLine
+Set-PSReadLineKeyHandler -Key Ctrl+u -Function DeleteLine
 Set-PSReadLineKeyHandler -Key Alt+f -Function ForwardWord
 Set-PSReadLineKeyHandler -Key Alt+b -Function BackwardWord
 
