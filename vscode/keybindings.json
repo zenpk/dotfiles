@@ -314,30 +314,6 @@
     "key": "ctrl+e",
     "command": "find-it-faster.findFiles"
   },
-  {
-    "key": "shift+alt+j",
-    "command": "-find-it-faster.findFiles"
-  },
-  {
-    "key": "shift+alt+u",
-    "command": "-find-it-faster.findWithinFiles"
-  },
-  {
-    "key": "ctrl+shift+alt+u",
-    "command": "-find-it-faster.findWithinFilesWithType"
-  },
-  {
-    "key": "shift+alt+j",
-    "command": "-find-it-faster.findFiles"
-  },
-  {
-    "key": "shift+alt+u",
-    "command": "-find-it-faster.findWithinFiles"
-  },
-  {
-    "key": "ctrl+shift+alt+u",
-    "command": "-find-it-faster.findWithinFilesWithType"
-  },
   // Mac
   {
     "key": "enter",
