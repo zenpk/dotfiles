@@ -30,7 +30,7 @@
                 "action": "newTab",
                 "index": 0
             },
-            "keys": "ctrl+t"
+            "keys": "ctrl+1"
         },
         {
             "command": "paste",
@@ -255,6 +255,10 @@
         {
             "command": "unbound",
             "keys": "alt+f4"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+t"
         }
     ],
     "copyFormatting": "none",
