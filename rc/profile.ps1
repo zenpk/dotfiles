@@ -57,26 +57,4 @@ Set-PSReadLineKeyHandler -Key Ctrl+e -Function EndOfLine
 Set-PSReadLineKeyHandler -Key Alt+f -Function ForwardWord
 Set-PSReadLineKeyHandler -Key Alt+b -Function BackwardWord
 
-Set-PSReadLineKeyHandler -Chord '"',"'" `
-                         -BriefDescription SmartInsertQuote `
-                         -LongDescription "Insert paired quotes if not already on a quote" `
-                         -ScriptBlock {
-    param($key, $arg)
-
-    $line = $null
-    $cursor = $null
-    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-
-    if ($line.Length -gt $cursor -and $line[$cursor] -eq $key.KeyChar) {
-        # Just move the cursor
-        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor + 1)
-    }
-    else {
-        # Insert matching quotes, move cursor to be in between the quotes
-        [Microsoft.PowerShell.PSConsoleReadLine]::Insert("$($key.KeyChar)" * 2)
-        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor - 1)
-    }
-}
-
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -PSReadlineChordProvider "Ctrl+t" -PSReadlineChordReverseHistory "Ctrl+r" -PSReadlineChordSetLocation "Ctrl+q"
