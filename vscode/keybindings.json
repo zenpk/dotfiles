@@ -306,12 +306,42 @@
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
   {
-    "key": "alt+e",
+    "key": "ctrl+shift+e",
     "command": "workbench.action.quickOpen"
   },
   // find it faster
   {
     "key": "ctrl+e",
     "command": "find-it-faster.findFiles"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "-find-it-faster.findFiles"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-find-it-faster.findWithinFiles"
+  },
+  {
+    "key": "ctrl+shift+alt+u",
+    "command": "-find-it-faster.findWithinFilesWithType"
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "-find-it-faster.findFiles"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-find-it-faster.findWithinFiles"
+  },
+  {
+    "key": "ctrl+shift+alt+u",
+    "command": "-find-it-faster.findWithinFilesWithType"
+  },
+  // Mac
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   }
 ]
