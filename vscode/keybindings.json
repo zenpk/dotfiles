@@ -297,6 +297,11 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "ctrl+left",
+    "command": "list.collapseAll",
+    "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+  },
+  {
     "key": "ctrl+shift+f",
     "command": "workbench.action.findInFiles"
   },
@@ -304,6 +309,10 @@
     "key": "ctrl+shift+f",
     "command": "workbench.view.search",
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
   },
   {
     "key": "ctrl+shift+e",
