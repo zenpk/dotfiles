@@ -8,6 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 plugins=(
 	git
 	zsh-syntax-highlighting
@@ -32,16 +34,14 @@ function gitsignssh() {
     git config commit.gpgsign true
 }
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
+
 export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
 
 SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE=~/.zsh_history
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
