@@ -16,9 +16,12 @@
 [rebase]
 	updateRefs = true
 [alias]
+    lazy = "!f() { git add --all; git commit -m \"$*\" && git push; }; f"
+    clonessh = "!f() { git clone \"$1\" --config core.sshCommand=\"ssh -i ~/.ssh/${2:-id_rsa}\"; }; f"
+    signssh = "!f() { git config gpg.format ssh && git config user.signingkey \"~/.ssh/$1.pub\" && git config commit.gpgsign true; }; f"
     sw = "!git checkout $(git branch -a | fzf | xargs)"
     bd = "!git branch -d $(git branch -a | fzf | xargs)"
     bD = "!git branch -D $(git branch -a | fzf | xargs)"
     glog = "!git log --graph --decorate --oneline --all"
-    flog = "!git log --pretty=oneline --all | fzf --ansi --delimiter=' ' --no-multi --preview='git show --color=always {1}' --with-nth=2.."
+    flog = "!git log --pretty=oneline | fzf --ansi --delimiter=' ' --no-multi --preview='git show --color=always {1}' --with-nth=2.. | cut -d ' ' -f 1"
 	count-lines = "!git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"

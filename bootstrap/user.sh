@@ -136,22 +136,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 sed -i 's/^plugins=.*/plugins=(\n    git\n    zsh-syntax-highlighting\n    zsh-autosuggestions\n    fzf-tab)/' ~/.zshrc
 cat << EOF >> ~/.zshrc
-function lazygit() {
-	git add --all
-	git commit -m "$*"
-	git push
-}
-
-function gitclonessh() {
-    git clone "$1" --config core.sshCommand="ssh -i ~/.ssh/$2"
-}
-
-function gitsignssh() {
-    git config gpg.format ssh
-    git config user.signingkey "~/.ssh/$1.pub"
-    git config commit.gpgsign true
-}
-
 # source <(fzf --zsh)
 bindkey "^q" fzf-cd-widget
 
