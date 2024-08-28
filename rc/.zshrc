@@ -22,17 +22,16 @@ function fcd () {
             find_path="/"
         fi
         local selected=$(find "$find_path" -maxdepth 1 -type f -o -type d | 
-            sed 's,'^"$current_path"/',,' |
-            sed "1c .." |
+            awk -v p="$current_path/" 'NR == 1 {print ".."; next} {sub("^"p, ""); print}' |
             fzf --preview 'f () {
             local path="'"$current_path"'"/$1
-            local lowered=$(echo $path | tr "[:upper:]" "[:lower:]")
+            local lowered=$(echo $path | /usr/bin/tr "[:upper:]" "[:lower:]")
             if [ -d "$path" ]; then
-                ls -lah "$path"
+                /bin/ls -lah "$path"
             elif [ -f "$path" ]; then
                 case "$lowered" in
-                    *.exe|*.mp3|*.wav|*.mp4|*.mov|*.ts|*.jpg|*.jpeg|*.png) file "$path" ;;
-                    *) cat "$path" ;;
+                    *.exe|*.mp3|*.wav|*.mp4|*.mov|*.ts|*.jpg|*.jpeg|*.png) /usr/bin/file "$path" ;;
+                    *) /bin/cat "$path" ;;
                 esac
             else
                 echo "No preview available"
