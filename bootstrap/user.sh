@@ -5,6 +5,7 @@
 sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
+sudo apt install -y vim-gtk3
 sudo apt upgrade -y
 
 # homebrew
@@ -94,7 +95,6 @@ set undofile
 set undodir=$HOME/.vim/undo
 set updatetime=50
 set signcolumn=yes
-set clipboard=unnamed
 
 map <space> <leader>
 " sane clipboard
@@ -103,22 +103,31 @@ noremap C "1C
 noremap s "1s
 noremap S "1S
 noremap x "1x
-noremap X x
+noremap X "+x
 noremap d "1d
 noremap dd "1dd
 noremap D "1D
-nnoremap <leader>d dd
-nnoremap <leader>D D
-vnoremap p "1dhp
+nnoremap <leader>d "+dd
+nnoremap <leader>D "+D
+nnoremap p "+p
+vnoremap p "1d"+P
+nnoremap P "+P
+vnoremap P "1d"+P
+nnoremap y "+y
+nnoremap yy "+yy
+" yank without jump
+vnoremap y "+ygv<esc>
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
-" yank without jump
-vnoremap y ygv<esc>
 " visual block
 nnoremap <leader>v <C-v>
 " search and replace
-nnoremap <leader>sr :%s/\<<C-r><C-w>\>/<C-r><C-w>/g<left><left>
+nnoremap <leader>ss /\<<C-r>+\>
+vnoremap <leader>ss "1y/\<<C-r>"1\>
+nnoremap <leader>sr :%s/\<<C-r>+\>/<C-r>+/g<left><left>
+vnoremap <leader>sr "1y:%s/\<<C-r>"1\>/<C-r>"1/g<left><left>
+" useful
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
