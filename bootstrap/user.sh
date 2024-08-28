@@ -100,8 +100,6 @@ map <space> <leader>
 " sane clipboard
 noremap c "1c
 noremap C "1C
-noremap s "1s
-noremap S "1S
 noremap x "1x
 noremap X "+x
 noremap d "1d
@@ -123,16 +121,23 @@ nnoremap Q <nop>
 " visual block
 nnoremap <leader>v <C-v>
 " search and replace
-nnoremap <leader>ss /\<<C-r>+\>
-vnoremap <leader>ss "1y/\<<C-r>"1\>
-nnoremap <leader>sr :%s/\<<C-r>+\>/<C-r>+/g<left><left>
-vnoremap <leader>sr "1y:%s/\<<C-r>"1\>/<C-r>"1/g<left><left>
+nnoremap <leader>ss /<C-r>+<CR>
+vnoremap <leader>ss "1y/<C-r>1<CR>
+nnoremap <leader>sr :%s/<C-r>+/<C-r>+/g<left><left>
+vnoremap <leader>sr "1y:%s/<C-r>1/<C-r>1/g<left><left>
 " useful
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
 " enter is not useless
 nnoremap <CR> viw
+
+" plugins
+" vim surround and sneak
+noremap s <nop>
+noremap S <nop>
+noremap f s
+noremap F S
 
 EOF
 
