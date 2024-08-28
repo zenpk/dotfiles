@@ -7,6 +7,10 @@ sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt upgrade -y
 
+# homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install fzf
+
 # tmux
 cat << EOF > ~/.tmux.conf
 # change prefix to C-a

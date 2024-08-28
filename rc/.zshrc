@@ -8,8 +8,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 source <(fzf --zsh)
-bindkey "^q" fzf-cd-widget
 
 # fzf file explorer
 function fcd () {
@@ -56,11 +57,6 @@ function fcd () {
     done
 }
 
-export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
-
+bindkey "^q" fzf-cd-widget
 SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE=~/.zsh_history
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
