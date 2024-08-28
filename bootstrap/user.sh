@@ -133,17 +133,9 @@ sudo sed s/sufficient/required/g -i /etc/pam.d/chsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 sed -i 's/^plugins=.*/plugins=(\n    git\n    zsh-syntax-highlighting\n    zsh-autosuggestions\n    fzf-tab)/' ~/.zshrc
-cat << EOF >> ~/.zshrc
-# source <(fzf --zsh)
-bindkey "^q" fzf-cd-widget
-
-export PATH="$HOME/.local/bin:/usr/local/go/bin:$PATH"
-
-SAVEHIST=1000  # Save most-recent 1000 lines
-HISTFILE=~/.zsh_history
-EOF
 
 # ssh
 mkdir ~/.ssh
