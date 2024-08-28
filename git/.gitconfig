@@ -13,8 +13,6 @@
 	directory = *
 [push]
 	autoSetupRemote = true
-[rebase]
-	updateRefs = true
 [alias]
     lazy = "!f() { git add --all; git commit -m \"$*\" && git push; }; f"
     clonessh = "!f() { git clone \"$1\" --config core.sshCommand=\"ssh -i ~/.ssh/${2:-id_rsa}\"; }; f"
