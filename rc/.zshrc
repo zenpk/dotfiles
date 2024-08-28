@@ -23,7 +23,7 @@ function fcd () {
         fi
         local selected=$(find "$find_path" -maxdepth 1 -type f -o -type d | 
             awk -v p="$current_path/" 'NR == 1 {print ".."; next} {sub("^"p, ""); print}' |
-            fzf --preview 'f () {
+            fzf --cycle --preview 'f () {
             local path="'"$current_path"'"/$1
             local lowered=$(echo $path | /usr/bin/tr "[:upper:]" "[:lower:]")
             if [ -d "$path" ]; then
