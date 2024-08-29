@@ -1,11 +1,10 @@
 Host *
     IdentityFile ~/.ssh/my
-    # https://superuser.com/questions/326871/using-clipboard-through-ssh-in-vim
-    ForwardX11 yes
-    ForwardX11Trusted yes
 
 Host my
     HostName my
     User my
     RemoteCommand tmux new -A -s my
     RequestTTY yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
