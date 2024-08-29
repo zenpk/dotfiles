@@ -99,23 +99,26 @@ set clipboard=
 
 map <space> <leader>
 " sane clipboard
-noremap c "_c
-noremap C "_C
-noremap x "_x
-noremap X "+x
-noremap d "_d
-noremap dd "_dd
+nnoremap c "_c
+nnoremap C "_C
+nnoremap x "_x
+xnoremap x "_x
+nnoremap X "+x
+xnoremap X "+x
+nnoremap d "_d
+nnoremap dd "_dd
 noremap D "_D
 nnoremap <leader>d "+dd
 nnoremap <leader>D "+D
 nnoremap p "+p
-vnoremap p "_d"+P
+xnoremap p "_d"+P
 nnoremap P "+P
-vnoremap P "_d"+P
+xnoremap P "_d"+P
 nnoremap y "+y
 nnoremap yy "+yy
 " yank without jump
-vnoremap y "+ygv<esc>
+xnoremap y "+ygv<esc>
+
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
@@ -123,9 +126,9 @@ nnoremap Q <nop>
 nnoremap <leader>v <C-v>
 " search and replace
 nnoremap <leader>ss /<C-r>+<CR>
-vnoremap <leader>ss "ay/<C-r>a<CR>
+xnoremap <leader>ss "ay/<C-r>a<CR>
 nnoremap <leader>sr :%s/<C-r>+/<C-r>+/g<left><left>
-vnoremap <leader>sr "ay:%s/<C-r>1/<C-r>a/g<left><left>
+xnoremap <leader>sr "ay:%s/<C-r>1/<C-r>a/g<left><left>
 " useful
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
@@ -137,6 +140,9 @@ nnoremap <CR> viw
 " vim surround and sneak
 noremap s <nop>
 noremap S <nop>
+" enable these if switched to vim
+" onoremap z s
+" onoremap Z S
 
 EOF
 
