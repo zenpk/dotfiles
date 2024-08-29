@@ -19,5 +19,5 @@
     signssh = "!f() { git config gpg.format ssh && git config user.signingkey \"~/.ssh/$1.pub\" && git config commit.gpgsign true; }; f"
     sw = "!f() { branch=$(git branch -a | fzf --cycle); if [ -n \"$branch\" ]; then git switch $(echo $branch | xargs); fi; }; f"
     glog = "!git log --graph --decorate --oneline --all"
-    flog = "!git log --pretty=oneline | fzf --ansi --delimiter=' ' --cycle --no-multi --preview='git show --color=always {1}' --with-nth=2.. | cut -d ' ' -f 1"
+    flog = "!git log --pretty=format:\"%h%x09%an%x09%s\" | fzf --delimiter='\t' --cycle --preview='git show --color=always {1}' --with-nth=2.. | cut -d '\t' -f 1"
 	count-lines = "!git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
