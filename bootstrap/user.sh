@@ -99,19 +99,19 @@ set clipboard=
 
 map <space> <leader>
 " sane clipboard
-noremap c "ac
-noremap C "aC
-noremap x "ax
+noremap c "_c
+noremap C "_C
+noremap x "_x
 noremap X "+x
-noremap d "ad
-noremap dd "add
-noremap D "aD
+noremap d "_d
+noremap dd "_dd
+noremap D "_D
 nnoremap <leader>d "+dd
 nnoremap <leader>D "+D
 nnoremap p "+p
-vnoremap p "ad"+P
+vnoremap p "_d"+P
 nnoremap P "+P
-vnoremap P "ad"+P
+vnoremap P "_d"+P
 nnoremap y "+y
 nnoremap yy "+yy
 " yank without jump
