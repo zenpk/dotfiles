@@ -15,6 +15,12 @@ source <(fzf --zsh)
 # fzf file explorer
 function fcd () {
     local current_path="${1:-$(pwd)}"
+    # remove the last / if necessary
+    if [ "${current_path:0-1}" "==" "/" ]; then
+        if [ "$current_path" "!=" "/" ]; then
+            current_path=${current_path::-1}
+        fi
+    fi
 
     while true; do
         local find_path=$current_path

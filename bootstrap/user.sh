@@ -95,22 +95,23 @@ set undofile
 set undodir=$HOME/.vim/undo
 set updatetime=50
 set signcolumn=yes
+set clipboard=
 
 map <space> <leader>
 " sane clipboard
-noremap c "1c
-noremap C "1C
-noremap x "1x
+noremap c "ac
+noremap C "aC
+noremap x "ax
 noremap X "+x
-noremap d "1d
-noremap dd "1dd
-noremap D "1D
+noremap d "ad
+noremap dd "add
+noremap D "aD
 nnoremap <leader>d "+dd
 nnoremap <leader>D "+D
 nnoremap p "+p
-vnoremap p "1d"+P
+vnoremap p "ad"+P
 nnoremap P "+P
-vnoremap P "1d"+P
+vnoremap P "ad"+P
 nnoremap y "+y
 nnoremap yy "+yy
 " yank without jump
@@ -122,9 +123,9 @@ nnoremap Q <nop>
 nnoremap <leader>v <C-v>
 " search and replace
 nnoremap <leader>ss /<C-r>+<CR>
-vnoremap <leader>ss "1y/<C-r>1<CR>
+vnoremap <leader>ss "ay/<C-r>a<CR>
 nnoremap <leader>sr :%s/<C-r>+/<C-r>+/g<left><left>
-vnoremap <leader>sr "1y:%s/<C-r>1/<C-r>1/g<left><left>
+vnoremap <leader>sr "ay:%s/<C-r>1/<C-r>a/g<left><left>
 " useful
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
@@ -136,8 +137,6 @@ nnoremap <CR> viw
 " vim surround and sneak
 noremap s <nop>
 noremap S <nop>
-noremap f s
-noremap F S
 
 EOF
 

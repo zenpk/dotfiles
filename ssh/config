@@ -1,5 +1,8 @@
 Host *
     IdentityFile ~/.ssh/my
+    # https://superuser.com/questions/326871/using-clipboard-through-ssh-in-vim
+    ForwardX11 yes
+    ForwardX11Trusted yes
 
 Host my
     HostName my
