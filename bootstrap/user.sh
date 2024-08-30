@@ -138,8 +138,6 @@ nnoremap <CR> viw
 
 " plugins
 " vim surround and sneak
-noremap s <nop>
-noremap S <nop>
 " enable these if switched to vim
 " onoremap z s
 " onoremap Z S
