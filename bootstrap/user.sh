@@ -135,13 +135,6 @@ nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
 " enter is not useless
 nnoremap <CR> viw
-
-" plugins
-" vim surround and sneak
-" enable these if switched to vim
-" onoremap z s
-" onoremap Z S
-
 EOF
 
 # zsh
