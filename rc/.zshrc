@@ -76,4 +76,5 @@ function fcd () {
 
 bindkey "^q" fzf-cd-widget
 SAVEHIST=1000  # Save most-recent 1000 lines
-HISTFILE=~/.zsh_history
+HISTFILE="~/.zsh_history"
+export BAT_THEME="OneHalfDark"
