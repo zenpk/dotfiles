@@ -28,7 +28,7 @@
       "path": "Windows.Terminal.PowershellCore"
     }
   },
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "pwsh",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
 
@@ -69,9 +69,7 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
-  "vim.useSystemClipboard": true,
   "vim.leader": " ",
-  "vim.easymotion": true,
   "vim.sneak": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
@@ -130,14 +128,6 @@
     {
       "before": ["`"],
       "commands": ["bookmarks.listFromAllFiles"]
-    },
-    {
-      "before": ["<leader>", "s", "f"],
-      "commands": [
-        {
-          "command": "find-it-faster.findWithinFiles",
-        }
-      ]
     },
     {
       "before": ["<leader>", "g", "p"],
@@ -206,14 +196,10 @@
     }
   ],
 
-  "find-it-faster.general.useTerminalInEditor": false,
-  "find-it-faster.findWithinFiles.previewCommand": "bat --decorations=always -n --color=always {1} --highlight-line {2}",
-  "find-it-faster.findFiles.previewCommand": "bat --decorations=always --color=always --plain {}",
-  "find-it-faster.general.batTheme": "OneHalfDark",
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
   "cSpell.diagnosticLevel": "Hint",
   "github.copilot.editor.enableAutoCompletions": true,
-
+  "redhat.telemetry.enabled": false,
   "yaclock.prefix": "",
   "yaclock.padHour24": true,
   "yaclock.showDate": true,
@@ -269,6 +255,5 @@
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": []
-  },
-  "redhat.telemetry.enabled": false
+  }
 }

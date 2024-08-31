@@ -1,121 +1,65 @@
-// Place your key bindings in this file to override the defaults
 [
   // Vim conflicts
   {
     "key": "ctrl+i",
-    "command": "-inlineChat.start",
-    "when": "inlineChatHasProvider && !editorReadonly"
+    "command": "",
+    "when": ""
   },
   {
     "key": "ctrl+i",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-focusSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-markdown.extension.editing.toggleItalic",
-    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-toggleSuggestionDetails",
-    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "-extension.vim_ctrl+k",
-    "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
-  },
-  // copilot uses too much ctrl+i
-  {
-    "key": "ctrl+i",
-    "command": "-workbench.action.chat.stopListeningAndSubmit",
-    "when": "hasChatProvider && hasSpeechProvider && inChatInput && voiceChatInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && voiceChatInProgress"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-workbench.action.chat.startVoiceChat",
-    "when": "hasChatProvider && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !quickVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress || hasChatProvider && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !inlineChatHasActiveRequest && !inlineVoiceChatInProgress && !quickVoiceChatInProgress && !voiceChatGettingReady && !voiceChatInEditorInProgress && !voiceChatInViewInProgress"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-workbench.action.chat.holdToVoiceChatInChatView",
-    "when": "hasChatProvider && hasSpeechProvider && !editorFocus && !inChatInput && !inlineChatFocused"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-inlineChat.holdForSpeech",
-    "when": "hasSpeechProvider && inlineChatHasProvider && inlineChatVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-inlineChat.start",
-    "when": "editorFocus && inlineChatHasProvider && !editorReadonly"
-  },
-  {
-    "key": "ctrl+i",
-    "command": "-github.copilot.terminal.suggestCommand",
-    "when": "terminalFocus"
+    "command": "extension.vim_ctrl+i",
+    "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
   },
   {
     "key": "ctrl+o",
-    "command": "-workbench.action.files.openFile",
-    "when": "true"
+    "command": ""
   },
   {
     "key": "ctrl+o",
-    "command": "-workbench.action.files.openFolderViaWorkspace",
-    "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openFileFolder",
-    "when": "isMacNative && openFolderWorkspaceSupport"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-workbench.action.files.openLocalFile",
-    "when": "remoteFileDialogVisible"
+    "command": "extension.vim_ctrl+o",
+    "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
   },
   {
     "key": "ctrl+u",
-    "command": "-cursorUndo",
-    "when": "textInputFocus"
+    "command": ""
+  },
+  {
+    "key": "ctrl+u",
+    "command": "extension.vim_ctrl+u",
+    "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
   },
   {
     "key": "ctrl+d",
-    "command": "-editor.action.addSelectionToNextFindMatch",
-    "when": "editorFocus"
+    "command": ""
+  },
+  {
+    "key": "ctrl+d",
+    "command": "extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
   },
   {
     "key": "ctrl+[",
-    "command": "-editor.action.outdentLines",
-    "when": "editorTextFocus && !editorReadonly"
+    "command": "-extension.vim_ctrl+[",
+    "when": "editorTextFocus && vim.active && vim.use<C-[> && !inDebugRepl"
   },
   {
-    "key": "ctrl+]",
-    "command": "-editor.action.indentLines",
-    "when": "editorTextFocus && !editorReadonly"
+    "key": "ctrl+f",
+    "command": "-extension.vim_ctrl+f",
+    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "-extension.vim_ctrl+h",
+    "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
   },
   // ctrl+p/n to prev and next
   {
     "key": "ctrl+n",
-    "command": "-workbench.action.files.newUntitledFile"
+    "command": ""
   },
   {
     "key": "ctrl+n",
     "command": "cursorDown",
-    "when": "textInputFocus"
   },
   {
     "key": "ctrl+n",
@@ -139,7 +83,7 @@
   },
   {
     "key": "ctrl+p",
-    "command": "-workbench.action.quickOpen"
+    "command": ""
   },
   {
     "key": "ctrl+p",
@@ -165,11 +109,6 @@
     "key": "ctrl+p",
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
-  },
-  // disable weirdos
-  {
-    "key": "ctrl+j",
-    "command": "-workbench.action.togglePanel"
   },
   // file tree
   {
@@ -214,7 +153,11 @@
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  // disable the most annoying shortcut ever
+  // disable annoying weirdos
+  {
+    "key": "ctrl+j",
+    "command": "-workbench.action.togglePanel"
+  },
   {
     "key": "ctrl+m",
     "command": "-editor.action.toggleTabFocusMode"
@@ -310,18 +253,28 @@
     "command": "workbench.view.search",
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
+  // make search usable
+  {
+    "key": "escape",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletVisible && searchInputBoxFocus"
+  },
+  {
+    "key": "ctrl+[",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletVisible && searchInputBoxFocus"
+  },
   {
     "key": "ctrl+e",
-    "command": "-workbench.action.quickOpen"
+    "command": ""
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "ctrl+shift+e",
     "command": "workbench.action.quickOpen"
-  },
-  // find it faster
-  {
-    "key": "ctrl+e",
-    "command": "find-it-faster.findFiles"
   },
   // Mac
   {
