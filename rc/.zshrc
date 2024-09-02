@@ -29,7 +29,7 @@ function fcd () {
 
         selected=$(find "$current_path" -maxdepth 1 -type f -o -type d \
             | awk -v p="$path_prefix/" 'NR == 1 {print ".."; next} {sub("^"p, ""); print}' \
-            --preview 'f () {
+            | fzf --preview 'f () {
             path="'"$path_prefix"'"/$1
             lowered=$(echo "$path" | /usr/bin/tr "[:upper:]" "[:lower:]")
             if [ -d "$path" ]; then
