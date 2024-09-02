@@ -122,6 +122,11 @@ xnoremap y "+ygv<esc>
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
+" sane scroll
+nnoremap <C-u> Hzz
+nnoremap <C-d> Lzz
+nnoremap H ^
+nnoremap L $
 " visual block
 nnoremap <leader>v <C-v>
 " search and replace
