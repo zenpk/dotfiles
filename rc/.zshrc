@@ -29,8 +29,6 @@ function fcd () {
 
         selected=$(find "$current_path" -maxdepth 1 -type f -o -type d \
             | awk -v p="$path_prefix/" 'NR == 1 {print ".."; next} {sub("^"p, ""); print}' \
-            | fzf --cycle \
-            --bind="ctrl-k:preview-up,ctrl-j:preview-down" \
             --preview 'f () {
             path="'"$path_prefix"'"/$1
             lowered=$(echo "$path" | /usr/bin/tr "[:upper:]" "[:lower:]")
@@ -77,4 +75,5 @@ function fcd () {
 bindkey "^q" fzf-cd-widget
 SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE="$HOME/.zsh_history"
+export FZF_DEFAULT_OPTS="--cycle --no-mouse --bind='ctrl-p:up,ctrl-n:down,ctrl-k:preview-up,ctrl-j:preview-down'"
 export BAT_THEME="OneHalfDark"
