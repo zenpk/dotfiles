@@ -38,7 +38,7 @@ function fcd () {
                 /bin/ls -lah "$path"
             elif [ -f "$path" ]; then
                 case "$lowered" in
-                    *.exe|*.mp3|*.wav|*.mp4|*.mov|*.ts|*.jpg|*.jpeg|*.png)
+                    *.exe|*.mp3|*.wav|*.mp4|*.mov|*.jpg|*.jpeg|*.png)
                         /usr/bin/file "$path"
                         ;;
                     *)
@@ -76,5 +76,5 @@ function fcd () {
 
 bindkey "^q" fzf-cd-widget
 SAVEHIST=1000  # Save most-recent 1000 lines
-HISTFILE="~/.zsh_history"
+HISTFILE="$HOME/.zsh_history"
 export BAT_THEME="OneHalfDark"
