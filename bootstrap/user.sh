@@ -125,8 +125,8 @@ nnoremap Q <nop>
 " sane scroll
 nnoremap <C-u> Hzz
 nnoremap <C-d> Lzz
-nnoremap H ^
-nnoremap L $
+noremap H ^
+noremap L $
 " visual block
 nnoremap <leader>v <C-v>
 " search and replace
