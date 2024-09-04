@@ -140,6 +140,9 @@ nnoremap <leader>paste :set paste<CR>
 nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
 " enter is not useless
 nnoremap <CR> viw
+" easy motion
+noremap s <leader><leader>w
+noremap S <leader><leader>b
 EOF
 
 # zsh
