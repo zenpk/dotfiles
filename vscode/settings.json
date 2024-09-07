@@ -63,14 +63,13 @@
   "editor.lineNumbers": "relative",
   "editor.cursorSurroundingLines": 10, // workaround for vim scrolloff
   "editor.semanticHighlighting.enabled": true,
-
-  "workbench.colorTheme": "JetMind",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
-  "workbench.tree.indent": 16, // make the explorer indent more
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.indent": 16,
   "workbench.layoutControl.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "JetMind",
   "debug.console.fontSize": 13,
   "terminal.integrated.fontSize": 13,
   "markdown.preview.fontSize": 13,
@@ -83,8 +82,12 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
+  "vim.foldfix": true,
   "vim.leader": " ",
-  "vim.sneak": true,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
+  "vim.sneak": false,
+  "vim.surround": true,
   "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
   "vim.highlightedyank.enable": true,
@@ -98,6 +101,10 @@
     {
       "before": ["U"],
       "commands": ["redo"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
     },
     {
       "before": ["<leader>", "f"],
@@ -128,10 +135,21 @@
       "commands": ["editor.action.goToReferences"]
     },
     {
+      "before": ["g", "D"],
+      "commands": ["editor.action.goToDeclaration"]
+    },
+    {
+      // goto [b]readcrumbs
+      "before": ["g", "b"],
+      "commands": ["breadcrumbs.focusAndSelect"]
+    },
+    {
+      // prev [d]ebug info
       "before": ["[", "d"],
       "commands": ["editor.action.marker.previous"]
     },
     {
+      // next [d]ebug info
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
     },
@@ -144,6 +162,7 @@
       "commands": ["bookmarks.listFromAllFiles"]
     },
     {
+      // [g]enerate [p]rint
       "before": ["<leader>", "g", "p"],
       "commands": [
         {
@@ -153,6 +172,7 @@
       ]
     },
     {
+      // [g]enerate [l]og
       "before": ["<leader>", "g", "l"],
       "commands": [
         {
@@ -162,6 +182,7 @@
       ]
     },
     {
+      // [g]enerate [e]rror
       "before": ["<leader>", "g", "e"],
       "commands": [
         {
@@ -175,6 +196,11 @@
     {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.formatSelection"]
+    },
+    {
+      // goto [b]readcrumbs
+      "before": ["g", "b"],
+      "commands": ["breadcrumbs.focusAndSelect"]
     }
   ],
 
