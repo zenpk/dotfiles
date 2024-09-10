@@ -132,8 +132,8 @@ nnoremap <leader>v <C-v>
 " search and replace
 nnoremap <leader>ss /<C-r>+<CR>
 xnoremap <leader>ss "ay/<C-r>a<CR>
-nnoremap <leader>sr :%s/<C-r>+/<C-r>+/g<left><left>
-xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/g<left><left>
+nnoremap <leader>sr :%s/<C-r>+/<C-r>+/gc<left><left><left>
+xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/gc<left><left><left>
 " useful
 nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>paste :set paste<CR>
