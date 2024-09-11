@@ -3,10 +3,6 @@
   "settingsVersion": "2.1.2",
   "exclusionRules": [
     {
-      "passKeys": "f",
-      "pattern": "https?://www.youtube.com/*"
-    },
-    {
       "passKeys": "",
       "pattern": "https?://www.soundslice.com/*"
     },
