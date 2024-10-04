@@ -35,7 +35,7 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
 
   "search.useIgnoreFiles": true,
-  "search.useGlobalIgnoreFiles": true,
+  "search.useGlobalIgnoreFiles": false,
   "search.useParentIgnoreFiles": true,
   "search.smartCase": true,
   "search.exclude": {
@@ -44,7 +44,8 @@
     "**/*.code-search": true,
     "package-lock.json": true,
     "yarn.lock": true,
-    "LICENSE": true
+    "LICENSE": true,
+    "**/myfiles": false
   },
 
   "editor.acceptSuggestionOnEnter": "off",
@@ -241,11 +242,12 @@
 
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
   "cSpell.diagnosticLevel": "Hint",
-  "github.copilot.editor.enableAutoCompletions": true,
   "redhat.telemetry.enabled": false,
   "yaclock.prefix": "",
   "yaclock.padHour24": true,
   "yaclock.showDate": true,
+  "gitTreeCompare.diffMode": "full",
+  "gitTreeCompare.showCheckboxes": false,
 
   "gopls": {
     "ui.semanticTokens": true,
