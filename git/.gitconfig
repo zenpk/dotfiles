@@ -15,16 +15,17 @@
 [push]
 	autoSetupRemote = true
 [alias]
+    color-status = "!f() { awk -v var=\"$1\" '{ split($0, fields, \"\t\"); res = \"\"; if (fields[1] == \"A\") res = \"\\033[32m\" fields[1] \"\\033[0m\"; else if (fields[1] == \"D\") res = \"\\033[31m\" fields[1] \"\\033[0m\"; else if (fields[1] == \"M\") res = \"\\033[34m\" fields[1] \"\\033[0m\"; if (res == \"\") res = $0; else res = res \"\t\" fields[2]; if (var != \"\") res = res \"\t\" var; print res; }'; }; f"
     lazy = "!f() { git add --all; git commit -m \"$*\" && git push; }; f"
     clonessh = "!f() { git clone \"$1\" --config core.sshCommand=\"ssh -i ~/.ssh/${2:-id_rsa}\"; }; f"
     signssh = "!f() { git config gpg.format ssh && git config user.signingkey \"~/.ssh/$1.pub\" && git config commit.gpgsign true; }; f"
     lg = "log --graph --abbrev-commit --decorate --color=always --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
     glog = "log --graph --all --abbrev-commit --decorate --color=always --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
-    flog = "!git log --abbrev-commit --decorate --color=always --pretty=format:\"%h%x09%Cblue%an%x09%Creset%s\" | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --name-status {1}' | cut -d '\t' -f 1"
-    dlog = "!git log --abbrev-commit --decorate --color=always --pretty=format:\"%h%x09%Cblue%an%x09%Creset%s\" | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --color=always {1}' | cut -d '\t' -f 1"
     sw = "!f() { branch=$(git branch -a | fzf --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then git switch $(echo $branch | xargs); fi; }; f"
-    df = "!f() { branch=\"${1:-HEAD}\"; git diff --name-status \"$branch\" | awk -v br=\"$branch\" '{ split($0, fields, \"\t\"); if (fields[1] == \"A\") { fields[1] = \"\\033[32m\" fields[1] \"\\033[0m\" } else if (fields[1] == \"D\") { fields[1] = \"\\033[31m\" fields[1] \"\\033[0m\" } else { fields[1] = \"\\033[34m\" fields[1] \"\\033[0m\" } print fields[1] \"\t\" fields[2] \"\t\" br; }' | fzf --ansi --multi --with-nth=1,2 --delimiter='\t' --preview='git diff {3} --color -- {2} | tail -n +5' | awk -F'\t' '{ print $2 }'; }; f"
     br = "!f() { branch=$(git branch -a | fzf --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then echo $branch; fi; }; f"
-    st = "!f() { git stash list | fzf --delimiter=':' --preview='git stash show -p --color=always {1}' | awk -F ':' '{ print $1 }'; }; f"
-    stf = "!f() { stash=$(git stash list | fzf --delimiter=':' --preview='git stash show --name-status {1}' | awk -F ':' '{ print $1 }'); file=$(git stash show --name-status \"$stash\"| awk -v st=\"$stash\" '{ print $0 \"\t\" st; }' | fzf --delimiter='\t' --with-nth=1,2 --preview='git diff --color=always {3} -- {2}' | awk -F '\t' '{ print $2 }'); echo \"$stash -- $file\"; }; f"
+    df = "!f() { branch=\"${1:-HEAD}\"; git diff --name-status \"$branch\" | git color-status \"$branch\" | fzf --ansi --multi --with-nth=1,2 --delimiter='\t' --preview='git diff {3} --color -- {2} | tail -n +5' | awk -F'\t' '{ print $2 }'; }; f"
+    dst = "!f() { git stash list | fzf --delimiter=':' --preview='git stash show -p --color=always {1}' | awk -F ':' '{ print $1 }'; }; f"
+    fst = "!f() { stash=$(git stash list | fzf --delimiter=':' --preview='git stash show --name-status {1} | git color-status' | awk -F ':' '{ print $1 }'); file=$(git stash show --name-status \"$stash\" | git color-status \"$stash\" | fzf --ansi --delimiter='\t' --with-nth=1,2 --preview='git diff --color=always {3} -- {2}' | awk -F '\t' '{ print $2 }'); echo \"$stash -- $file\"; }; f"
+    dlog = "!git log --abbrev-commit --decorate --color=always --pretty=format:\"%h%x09%Cblue%an%x09%Creset%s\" | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --color=always {1}' | cut -d '\t' -f 1"
+    flog = "!git log --abbrev-commit --decorate --color=always --pretty=format:\"%h%x09%Cblue%an%x09%Creset%s\" | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --name-status {1} | git color-status' | cut -d '\t' -f 1"
 	count-lines = "log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
