@@ -29,5 +29,5 @@
     st-file = "!f() { stash=$(git stash list | fzf --delimiter=':' --preview='git stash show --name-status {1} | git color-status' | awk -F ':' '{ print $1 }'); file=$(git stash show --name-status \"$stash\" | git color-status \"$stash\" | fzf --ansi --delimiter='\t' --with-nth=1,2 --preview='git diff --color {3} -- {2}' | awk -F '\t' '{ print $2 }'); echo \"$stash -- $file\"; }; f"
     his = "!git log-pretty | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --color {1}' | cut -d '\t' -f 1"
     his-stat = "!git log-pretty | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show --name-status {1} | git color-status' | cut -d '\t' -f 1"
-    his-file = "!f() { if [ -z \"$1\" ]; then echo \"no file name\"; return; fi; git log-pretty -- \"$1\" | awk -v file=\"$1\" '{ print $0 \"\t\" file; }' | fzf --ansi --with-nth=2.. --delimiter='\t' --preview='git show {1} --color -- {4}'; }; f"
+    his-file = "!f() { if [ -z \"$1\" ]; then echo \"no file name\"; return; fi; git log-pretty -- \"$1\" | awk -v file=\"$1\" '{ print $0 \"\t\" file; }' | fzf --ansi --with-nth=2..3 --delimiter='\t' --preview='git show {1} --color -- {4}'; }; f"
 	count-lines = "log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
