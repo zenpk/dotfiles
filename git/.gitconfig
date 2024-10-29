@@ -14,6 +14,8 @@
 	directory = *
 [push]
 	autoSetupRemote = true
+[remote "origin"]
+	prune = true
 [alias]
     color-status = "!f() { awk -v var=\"$1\" '{ split($0, fields, \"\t\"); res = \"\"; if (fields[1] == \"A\") res = \"\\033[32m\" fields[1] \"\\033[0m\"; else if (fields[1] == \"D\") res = \"\\033[31m\" fields[1] \"\\033[0m\"; else if (fields[1] == \"M\") res = \"\\033[34m\" fields[1] \"\\033[0m\"; if (res == \"\") res = $0; else res = res \"\t\" fields[2]; if (var != \"\") res = res \"\t\" var; print res; }'; }; f"
     log-pretty = "!git log --abbrev-commit --decorate --color --pretty=format:\"%h%x09%Cblue%an%x09%Creset%s\""
