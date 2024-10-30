@@ -25,7 +25,7 @@
     lg = "log --graph --all --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
     lg-one = "log --graph --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
     sw = "!f() { branch=$(git branch -a | fzf --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then git switch $(echo $branch | xargs); fi; }; f"
-    br = "!f() { branch=$(git branch -a | fzf --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then echo $branch; fi; }; f"
+    br = "!f() { branch=$(git branch -a | fzf --multi --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then echo $branch; fi; }; f"
     df = "!f() { branch=\"${1:-HEAD}\"; git diff --name-status \"$branch\" | git color-status \"$branch\" | fzf --ansi --multi --with-nth=1,2 --delimiter='\t' --preview='git diff {3} --color -- {2} | tail -n +5' | awk -F'\t' '{ print $2 }'; }; f"
     st = "!f() { git stash list | fzf --delimiter=':' --preview='git stash show -p --color {1}' | awk -F ':' '{ print $1 }'; }; f"
     st-file = "!f() { stash=$(git stash list | fzf --delimiter=':' --preview='git stash show --name-status {1} | git color-status' | awk -F ':' '{ print $1 }'); file=$(git stash show --name-status \"$stash\" | git color-status \"$stash\" | fzf --ansi --delimiter='\t' --with-nth=1,2 --preview='git diff --color {3} -- {2}' | awk -F '\t' '{ print $2 }'); echo \"$stash -- $file\"; }; f"
