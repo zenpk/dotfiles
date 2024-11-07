@@ -1,4 +1,6 @@
 #SingleInstance Force
+SetCapsLockState "AlwaysOff"
+SetNumLockState "AlwaysOn"
 
 Home::RButton
 PgUp::WheelUp

@@ -257,6 +257,44 @@
   "markdown.preview.breaks": true,
   "markdown.preview.fontSize": 13,
   "markdown.preview.fontFamily": "'Noto Sans SC', 'JetBrainsMonoNL Nerd Font Mono'",
+  "better-comments.tags": [
+    {
+      "tag": "warn",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "note",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
 
   "gopls": {
     "ui.semanticTokens": true,

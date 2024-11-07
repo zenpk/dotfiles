@@ -75,5 +75,5 @@ function fcd () {
 bindkey "^q" fzf-cd-widget
 SAVEHIST=1000  # Save most-recent 1000 lines
 HISTFILE="$HOME/.zsh_history"
-export FZF_DEFAULT_OPTS="--cycle --no-mouse --no-height --layout=default --bind='ctrl-p:up,ctrl-n:down,ctrl-k:preview-up,ctrl-j:preview-down' --preview-window=wrap"
+export FZF_DEFAULT_OPTS="--cycle --no-mouse --no-height --layout=default --bind='ctrl-p:up,ctrl-n:down,ctrl-k:preview-up,ctrl-j:preview-down,tab:toggle-out' --preview-window=wrap"
 export BAT_THEME="OneHalfDark"
