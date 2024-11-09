@@ -2,6 +2,7 @@
   "window.restoreWindows": "none",
   "window.zoomLevel": 1,
   "window.commandCenter": false,
+  "window.restoreFullscreen": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "security.workspace.trust.untrustedFiles": "open",
