@@ -8,6 +8,10 @@
     },
     {
       "passKeys": "",
+      "pattern": "https?://excalidraw.com/*"
+    },
+    {
+      "passKeys": "",
       "pattern": "https?://coderbyte.com/*"
     },
     {
