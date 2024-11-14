@@ -149,7 +149,7 @@
     {
       // prev [d]ebug info
       "before": ["[", "d"],
-      "commands": ["editor.action.marker.previous"]
+      "commands": ["editor.action.marker.prev"]
     },
     {
       // next [d]ebug info
