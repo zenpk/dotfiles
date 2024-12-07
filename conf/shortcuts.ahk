@@ -13,25 +13,28 @@ NumLock::#Space
 #Right::#^Right
 ^[::Esc
 
+
 ; https://www.autohotkey.com/boards/viewtopic.php?t=9701
+; This should be replaced by whatever your native language is. See 
+; https://learn.microsoft.com/en-us/windows/win32/intl/language-identifier-constants-and-strings
+; for the language identifiers list.
+global ja := DllCall("LoadKeyboardLayout", "Str", "00000411", "Int", 1)
+global en := DllCall("LoadKeyboardLayout", "Str", "00000409", "Int", 1)
+
 *CapsLock:: {
-    Send "{Blind}{LCtrl Down}"
-    ; Send a LCtrl-up to fool the IME.
-    SendSuppressedKeyUp("LCtrl")
+    global ja, en
+    w := DllCall("GetForegroundWindow")
+    pid := DllCall("GetWindowThreadProcessId", "UInt", w, "Ptr", 0)
+    layout := DllCall("GetKeyboardLayout", "UInt", pid)
+    if (layout == ja) {
+        PostMessage 0x50, 0, en,, "A"
+    }
+    SetKeyDelay -1
+    Send "{Blind}{LCtrl DownR}"
     KeyWait "CapsLock"
     Send "{Blind}{LCtrl Up}"
+    if (layout != en) {
+        PostMessage 0x50, 0, layout,, "A"
+    }
     return
-}
-
-SendSuppressedKeyUp(key) {
-    ; AutoHotkey v1.1.26+ uses this arbitrary value to signal its own hook
-    ; to suppress the event.  This exists because the technique of sending
-    ; and suppressing a key is already used to prevent Alt from activating
-    ; the window menu in some specific cases.
-    static KEY_BLOCK_THIS := 0xFFC3D450
-    DllCall("keybd_event"
-        , "char", GetKeyVK(key)
-        , "char", GetKeySC(key)
-        , "uint", 0x2 ; KEYEVENTF_KEYUP
-        , "uptr", KEY_BLOCK_THIS)
 }
