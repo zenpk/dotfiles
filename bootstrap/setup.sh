@@ -5,6 +5,9 @@ sudo apt update
 sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y vim-gtk3
+sudo apt install -y nginx
+
+sudo ufw allow "Nginx Full"
 
 # tmux
 cat << EOF > ~/.tmux.conf
