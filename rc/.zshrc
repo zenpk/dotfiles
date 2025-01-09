@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Linux only
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

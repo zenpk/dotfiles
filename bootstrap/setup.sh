@@ -6,10 +6,6 @@ sudo apt install -y zsh
 sudo apt install -y tmux
 sudo apt install -y vim-gtk3
 
-# homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install fzf
-
 # tmux
 cat << EOF > ~/.tmux.conf
 # change prefix to C-a
@@ -147,7 +143,7 @@ EOF
 sudo sed s/required/sufficient/g -i /etc/pam.d/chsh
 sudo chsh -s $(which zsh) $(whoami)
 sudo sed s/sufficient/required/g -i /etc/pam.d/chsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
 git clone https://github.com/Aloxaf/fzf-tab ~/.zsh/fzf-tab
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
@@ -162,4 +158,8 @@ chmod 600 ~/.ssh/authorized_keys
 echo "done"
 echo "run source ~/.zshrc to do p10k configure"
 echo "run tmux source ~/.tmux.conf and press prefix + I to install tmux plugins"
-echo "paste your SSH public key to ~/.ssh/authorized_keys"
+
+# optional
+# homebrew
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# brew install fzf
