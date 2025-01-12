@@ -87,6 +87,7 @@ setopt SHARE_HISTORY # allows multiple Zsh sessions to share the same command hi
 setopt APPENDHISTORY # ensures that each command entered in the current session is appended to the history file immediately after execution
 
 alias ll="ls -l --color=auto"
+alias la="ls -la --color=auto"
 
 # https://stackoverflow.com/questions/16727459/what-makes-ctrlq-work-in-zsh
 unsetopt flow_control
