@@ -166,3 +166,5 @@ echo "run tmux source ~/.tmux.conf and press prefix + I to install tmux plugins"
 # homebrew
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # brew install fzf
+# nginx user group
+# sudo usermod -aG [username] www-data
