@@ -1,5 +1,5 @@
 {
-  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap gg scrollToTop\nmap G scrollToBottom\nmap yy copyCurrentUrl\nmap i enterInsertMode\nmap gi focusInput\nmap s LinkHints.activateMode\nmap S LinkHints.activateModeToOpenInNewTab\nmap m Marks.activateCreateMode\nmap ` Marks.activateGotoMode\nmap t Vomnibar.activateTabSelection\nmap / enterFindMode\nmap n performFind\nmap N performBackwardsFind\nmap H goBack\nmap L goForward\nmap - visitPreviousTab\nmap <a-p> togglePinTab\nmap <a-m> toggleMuteTab\nmap ? showHelp",
+  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap gg scrollToTop\nmap G scrollToBottom\nmap yy copyCurrentUrl\nmap i enterInsertMode\nmap gi focusInput\nmap s LinkHints.activateMode\nmap S LinkHints.activateModeToOpenInNewTab\nmap m Marks.activateCreateMode\nmap ` Marks.activateGotoMode\nmap t Vomnibar.activateTabSelection\nmap n performFind\nmap N performBackwardsFind\nmap H goBack\nmap L goForward\nmap - visitPreviousTab\nmap <a-p> togglePinTab\nmap <a-m> toggleMuteTab\nmap ? showHelp",
   "settingsVersion": "2.1.2",
   "exclusionRules": [
     {
