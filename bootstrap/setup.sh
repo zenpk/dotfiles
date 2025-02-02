@@ -67,7 +67,6 @@ set -g @dracula-military-time true
 
 # should be at the bottom
 run '~/.tmux/plugins/tpm/tpm'
-
 EOF
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
