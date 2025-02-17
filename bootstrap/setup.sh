@@ -130,10 +130,12 @@ nnoremap <leader>ss /<C-r>+<CR>
 xnoremap <leader>ss "ay/<C-r>a<CR>
 nnoremap <leader>sr :%s/<C-r>+/<C-r>+/gc<left><left><left>
 xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/gc<left><left><left>
-" useful
-nnoremap <leader>sudow :w !sudo tee > /dev/null %<CR>
-nnoremap <leader>paste :set paste<CR>
-nnoremap <leader>copy :set nonumber norelativenumber signcolumn=no wrap<CR>
+" suso write
+nnoremap <leader>sw :w !sudo tee > /dev/null %<CR>
+" set paste
+nnoremap <leader>sp :set paste<CR>
+" set copy
+nnoremap <leader>sc :set nonumber norelativenumber signcolumn=no wrap<CR>
 " enter is not useless
 nnoremap <CR> viw
 " easy motion
