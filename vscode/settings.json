@@ -63,7 +63,6 @@
   "editor.lineHeight": 22,
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
-  "editor.cursorSurroundingLines": 10, // workaround for vim scrolloff
   "editor.semanticHighlighting.enabled": true,
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
@@ -78,147 +77,45 @@
 
   "extensions.ignoreRecommendations": true,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
   },
 
   "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
-  "vim.vimrc.enable": true,
-  "vim.foldfix": true,
-  "vim.leader": " ",
-  "vim.easymotion": true,
-  "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
-  "vim.easymotionMarkerForegroundColorOneChar": "#fcc77c",
-  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#bfcff0",
-  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#99bbdd",
-  "vim.surround": true,
-  "vim.camelCaseMotion.enable": true,
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.duration": 200,
-  "vim.highlightedyank.color": "rgba(153, 187, 221, 0.5)",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-u>": true,
-    "<C-s>": false,
-    "<C-z>": false,
-    // https://github.com/VSCodeVim/Vim/issues/8200
-    "<C-o>": false,
-    "<C-i>": false
-  },
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["U"],
-      "commands": ["redo"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatDocument"]
-    },
-    {
-      "before": ["<leader>", "o", "i"],
-      "commands": ["editor.action.organizeImports"]
-    },
-    {
-      "before": ["<leader>", "q", "f"],
-      "commands": ["editor.action.quickFix"]
-    },
-    {
-      "before": ["<leader>", "r", "n"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["<leader>", "p", "c"],
-      "commands": ["editor.showCallHierarchy"]
-    },
-    {
-      "before": ["<leader>", "%"],
-      "commands": ["editor.emmet.action.matchTag"]
-    },
-    {
-      "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    },
-    // goto [d]efinition/[d]eclaration is built in Vim plugin
-    {
-      "before": ["g", "D"],
-      "commands": ["editor.action.goToTypeDefinition"]
-    },
-    {
-      // goto [b]readcrumbs
-      "before": ["g", "b"],
-      "commands": ["breadcrumbs.focusAndSelect"]
-    },
-    {
-      // prev [d]ebug info
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
-    },
-    {
-      // next [d]ebug info
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["m"],
-      "commands": ["bookmarks.toggleLabeled"]
-    },
-    {
-      "before": ["`"],
-      "commands": ["bookmarks.listFromAllFiles"]
-    },
-    {
-      // [g]enerate [p]rint
-      "before": ["<leader>", "g", "p"],
-      "commands": [
-        {
-          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["print"]
-        }
-      ]
-    },
-    {
-      // [g]enerate [l]og
-      "before": ["<leader>", "g", "l"],
-      "commands": [
-        {
-          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["log"]
-        }
-      ]
-    },
-    {
-      // [g]enerate [e]rror
-      "before": ["<leader>", "g", "e"],
-      "commands": [
-        {
-          "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["error"]
-        }
-      ]
-    }
+
+  "vscode-neovim.ctrlKeysForInsertMode": [
+    "d",
+    "h",
+    "j",
+    "m",
+    "o",
+    "r",
+    "t",
+    "u",
+    "w"
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatSelection"]
-    },
-    {
-      // goto [b]readcrumbs
-      "before": ["g", "b"],
-      "commands": ["breadcrumbs.focusAndSelect"]
-    }
+  "vscode-neovim.ctrlKeysForNormalMode": [
+    "b",
+    "c",
+    "i",
+    "m",
+    "o",
+    "r",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "/",
+    "]",
+    "right",
+    "left",
+    "up",
+    "down",
+    "backspace",
+    "delete"
   ],
 
   "snippet-on-file-type.defineSnippets": [

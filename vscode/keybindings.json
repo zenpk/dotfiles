@@ -1,53 +1,4 @@
 [
-  // imitate Vim jump
-  // https://github.com/VSCodeVim/Vim/issues/8200
-  {
-    "key": "ctrl+i",
-    "command": ""
-  },
-  {
-    "key": "ctrl+i",
-    "command": "workbench.action.navigateForward",
-    "when": "canNavigateForward"
-  },
-  {
-    "key": "ctrl+o",
-    "command": ""
-  },
-  {
-    "key": "ctrl+o",
-    "command": "workbench.action.navigateBack",
-    "when": "canNavigateBack"
-  },
-  // Vim conflicts
-  {
-    "key": "ctrl+u",
-    "command": ""
-  },
-  {
-    "key": "ctrl+u",
-    "command": "extension.vim_ctrl+u",
-    "when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+d",
-    "command": ""
-  },
-  {
-    "key": "ctrl+d",
-    "command": "extension.vim_ctrl+d",
-    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "-extension.vim_ctrl+f",
-    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+h",
-    "command": "-extension.vim_ctrl+h",
-    "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-  },
   // ctrl+p/n to prev and next
   {
     "key": "ctrl+p",
@@ -142,49 +93,6 @@
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
   },
-  // file tree
-  {
-    // add
-    "key": "a",
-    "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    // delete
-    "key": "d",
-    "command": "moveFileToTrash",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    // rename
-    "key": "r",
-    "command": "renameFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    // undo
-    "key": "u",
-    "command": "undo",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    // cut
-    "key": "x",
-    "command": "filesExplorer.cut",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    // copy
-    "key": "y",
-    "command": "filesExplorer.copy",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    // paste
-    "key": "p",
-    "command": "filesExplorer.paste",
-    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
   // disable annoying weirdos
   {
     "key": "ctrl+j",
@@ -245,6 +153,18 @@
     "command": "workbench.view.search",
     "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
   },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
   // make search usable
   {
     "key": "escape",
@@ -281,23 +201,48 @@
     "when": "listFocus && refactorPreview.enabled && !inputFocus && !treestickyScrollFocused"
   },
   {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
     "key": "ctrl+;",
     "command": "workbench.action.compareEditor.swapSides"
+  },
+  // replace NeoVim <C-d> <C-u>
+  {
+    "key": "ctrl+u",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "editorScroll",
+          "args": {
+            "to": "up",
+            "by": "wrappedLine",
+            "value": 14
+          }
+        },
+        {
+          "command": "cursorMove",
+          "args": { "to": "viewPortCenter" }
+        }
+      ]
+    }
+  },
+  {
+    "key": "ctrl+d",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        {
+          "command": "editorScroll",
+          "args": {
+            "to": "down",
+            "by": "wrappedLine",
+            "value": 14
+          }
+        },
+        {
+          "command": "cursorMove",
+          "args": { "to": "viewPortCenter" }
+        }
+      ]
+    }
   }
 ]
