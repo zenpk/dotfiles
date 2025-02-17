@@ -130,7 +130,7 @@ nnoremap <leader>ss /<C-r>+<CR>
 xnoremap <leader>ss "ay/<C-r>a<CR>
 nnoremap <leader>sr :%s/<C-r>+/<C-r>+/gc<left><left><left>
 xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/gc<left><left><left>
-" suso write
+" sudo write
 nnoremap <leader>sw :w !sudo tee > /dev/null %<CR>
 " set paste
 nnoremap <leader>sp :set paste<CR>
