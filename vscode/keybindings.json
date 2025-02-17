@@ -1,14 +1,14 @@
 [
-  // Vim conflicts
+  // imitate Vim jump
+  // https://github.com/VSCodeVim/Vim/issues/8200
   {
     "key": "ctrl+i",
-    "command": "",
-    "when": ""
+    "command": ""
   },
   {
     "key": "ctrl+i",
-    "command": "extension.vim_ctrl+i",
-    "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
   },
   {
     "key": "ctrl+o",
@@ -16,9 +16,10 @@
   },
   {
     "key": "ctrl+o",
-    "command": "extension.vim_ctrl+o",
-    "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
   },
+  // Vim conflicts
   {
     "key": "ctrl+u",
     "command": ""
@@ -212,46 +213,6 @@
     "when": "activeEditorGroupEmpty && multipleEditorGroups"
   },
   {
-    "key": "ctrl+0",
-    "command": "workbench.action.focusSideBar"
-  },
-  {
-    "key": "ctrl+1",
-    "command": "workbench.action.focusFirstEditorGroup"
-  },
-  {
-    "key": "ctrl+2",
-    "command": "workbench.action.focusSecondEditorGroup"
-  },
-  {
-    "key": "ctrl+3",
-    "command": "workbench.action.focusThirdEditorGroup"
-  },
-  {
-    "key": "ctrl+4",
-    "command": "workbench.action.focusFourthEditorGroup"
-  },
-  {
-    "key": "ctrl+5",
-    "command": "workbench.action.focusFifthEditorGroup"
-  },
-  {
-    "key": "ctrl+6",
-    "command": "workbench.action.focusSixthEditorGroup"
-  },
-  {
-    "key": "ctrl+7",
-    "command": "workbench.action.focusSeventhEditorGroup"
-  },
-  {
-    "key": "ctrl+8",
-    "command": "workbench.action.focusEighthEditorGroup"
-  },
-  {
-    "key": "ctrl+9",
-    "command": "workbench.action.lastEditorInGroup"
-  },
-  {
     "key": "ctrl+tab",
     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
     "when": "!activeEditorGroupEmpty"
@@ -307,5 +268,36 @@
     "key": "enter",
     "command": "-renameFile",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // too much mistype
+  {
+    "key": "ctrl+enter",
+    "command": "-refactorPreview.apply",
+    "when": "refactorPreview.enabled && refactorPreview.hasCheckedChanges && focusedView == 'refactorPreview'"
+  },
+  {
+    "key": "space",
+    "command": "-refactorPreview.toggleCheckedState",
+    "when": "listFocus && refactorPreview.enabled && !inputFocus && !treestickyScrollFocused"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.compareEditor.swapSides"
   }
 ]

@@ -68,6 +68,8 @@
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 2,
   "workbench.tree.indent": 16,
   "workbench.layoutControl.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
@@ -89,13 +91,20 @@
   "vim.easymotionMarkerForegroundColorOneChar": "#fcc77c",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#bfcff0",
   "vim.easymotionMarkerForegroundColorTwoCharSecond": "#99bbdd",
-  "vim.sneak": false,
   "vim.surround": true,
-  "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.camelCaseMotion.enable": true,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 200,
   "vim.highlightedyank.color": "rgba(153, 187, 221, 0.5)",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    // https://github.com/VSCodeVim/Vim/issues/8200
+    "<C-o>": false,
+    "<C-i>": false
+  },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["u"],
@@ -126,6 +135,10 @@
       "commands": ["editor.action.rename"]
     },
     {
+      "before": ["<leader>", "p", "c"],
+      "commands": ["editor.showCallHierarchy"]
+    },
+    {
       "before": ["<leader>", "%"],
       "commands": ["editor.emmet.action.matchTag"]
     },
@@ -137,9 +150,10 @@
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
+    // goto [d]efinition/[d]eclaration is built in Vim plugin
     {
       "before": ["g", "D"],
-      "commands": ["editor.action.goToDeclaration"]
+      "commands": ["editor.action.goToTypeDefinition"]
     },
     {
       // goto [b]readcrumbs
@@ -241,7 +255,7 @@
 
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
   "cSpell.diagnosticLevel": "Hint",
-  "redhat.telemetry.enabled": false,
+  "cSpell.useCustomDecorations": false,
   "yaclock.prefix": "",
   "yaclock.padHour24": true,
   "yaclock.showDate": true,
@@ -250,7 +264,7 @@
   "excalidraw.theme": "light",
 
   "markdown.copyFiles.destination": {
-    "**/*": "./attachments/${documentBaseName}_${fileName}"
+    "**/*": "./_attachments/${documentBaseName}_${fileName}"
   },
   "markdown.editor.drop.enabled": "always",
   "markdown.editor.filePaste.audioSnippet": "<audio src=\"${src}\" title=\"${title}\"></audio>",
@@ -299,13 +313,17 @@
 
   "gopls": {
     "ui.semanticTokens": true,
-    "formatting.gofumpt": true
+    "ui.diagnostic.analyses": {
+      "unusedparams": true
+    }
   },
-  "go.toolsManagement.autoUpdate": true,
   "[go]": {
     "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": false
   },
+  "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "gofmt",
 
   "remote.SSH.remotePlatform": {
     "vultr": "linux",
@@ -345,5 +363,6 @@
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": []
-  }
+  },
+  "redhat.telemetry.enabled": false
 }
