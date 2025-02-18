@@ -79,8 +79,8 @@ set number
 set relativenumber
 set ignorecase
 set smartcase
-set incsearch
 set nohlsearch
+set incsearch
 set scrolloff=10
 set ts=4 sw=4 sts=4 expandtab smarttab
 set smartindent
@@ -114,7 +114,6 @@ nnoremap y "+y
 nnoremap yy "+yy
 " yank without jump
 xnoremap y "+ygv<esc>
-
 " redo
 nnoremap U <C-r>
 nnoremap Q <nop>
@@ -128,8 +127,8 @@ nnoremap <leader>v <C-v>
 " search and replace
 nnoremap <leader>ss /<C-r>+<CR>
 xnoremap <leader>ss "ay/<C-r>a<CR>
-nnoremap <leader>sr :%s/<C-r>+/<C-r>+
-xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a
+nnoremap <leader>sr :%s/<C-r>+/<C-r>+/gc<left><left><left>
+xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/gc<left><left><left>
 " sudo write
 nnoremap <leader>sw :w !sudo tee > /dev/null %<CR>
 " set paste
