@@ -102,8 +102,8 @@ xnoremap x "_x
 nnoremap X "+x
 xnoremap X "+x
 nnoremap d "_d
-nnoremap dd "_dd
-noremap D "_D
+xnoremap d "_d
+nnoremap D "_D
 nnoremap <leader>d "+dd
 nnoremap <leader>D "+D
 nnoremap p "+p
@@ -111,7 +111,8 @@ xnoremap p "_d"+P
 nnoremap P "+P
 xnoremap P "_d"+P
 nnoremap y "+y
-nnoremap yy "+yy
+noremap <leader>y y
+noremap <leader>p p
 " yank without jump
 xnoremap y "+ygv<esc>
 " redo
@@ -126,9 +127,9 @@ noremap L $
 nnoremap <leader>v <C-v>
 " search and replace
 nnoremap <leader>ss /<C-r>+<CR>
-xnoremap <leader>ss "ay/<C-r>a<CR>
+xnoremap <leader>ss "zy/<C-r>z<CR>
 nnoremap <leader>sr :%s/<C-r>+/<C-r>+/gc<left><left><left>
-xnoremap <leader>sr "ay:%s/<C-r>a/<C-r>a/gc<left><left><left>
+xnoremap <leader>sr "zy:%s/<C-r>z/<C-r>z/gc<left><left><left>
 " sudo write
 nnoremap <leader>sw :w !sudo tee > /dev/null %<CR>
 " set paste
