@@ -7,6 +7,7 @@
   "explorer.confirmDragAndDrop": false,
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.enabled": false,
+  "files.enableTrash": true,
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
@@ -49,9 +50,11 @@
     "**/myfiles": false
   },
 
-  "editor.acceptSuggestionOnEnter": "off",
   "editor.tabCompletion": "on",
+  "editor.acceptSuggestionOnEnter": "off",
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.wordBasedSuggestions": "currentDocument",
+  "editor.suggest.insertMode": "replace",
   "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": false,
@@ -66,15 +69,15 @@
   "editor.cursorSurroundingLines": 10, // workaround for vim scrolloff
   "editor.semanticHighlighting.enabled": true,
   "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToTypeDefinition",
+  "workbench.colorTheme": "JetMind",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 2,
+  "workbench.editor.limit.value": 5,
   "workbench.tree.indent": 16,
   "workbench.layoutControl.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "JetMind",
   "debug.console.fontSize": 13,
 
   "extensions.ignoreRecommendations": true,
@@ -85,6 +88,7 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
+  "vim.history": 5,
   "vim.foldfix": true,
   "vim.leader": " ",
   "vim.easymotion": true,
@@ -136,10 +140,6 @@
       "commands": ["editor.action.rename"]
     },
     {
-      "before": ["<leader>", "p", "c"],
-      "commands": ["editor.showCallHierarchy"]
-    },
-    {
       "before": ["<leader>", "%"],
       "commands": ["editor.emmet.action.matchTag"]
     },
@@ -151,7 +151,7 @@
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
-    // goto [d]efinition is built in Vim plugin
+    // goto [d]efinition (editor.action.revealDefinition) is built in Vim plugin
     {
       "before": ["g", "t"],
       "commands": ["editor.action.goToTypeDefinition"]
@@ -160,6 +160,10 @@
       // goto [b]readcrumbs
       "before": ["g", "b"],
       "commands": ["breadcrumbs.focusAndSelect"]
+    },
+    {
+      "before": ["g", "c"],
+      "commands": ["editor.showCallHierarchy"]
     },
     {
       // prev [d]ebug info
@@ -365,5 +369,6 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": []
   },
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "chat.commandCenter.enabled": false
 }
