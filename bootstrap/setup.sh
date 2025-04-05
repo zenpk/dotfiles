@@ -79,10 +79,14 @@ set number
 set relativenumber
 set ignorecase
 set smartcase
-set nohlsearch
+set hlsearch
 set incsearch
 set scrolloff=10
-set ts=4 sw=4 sts=4 expandtab smarttab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
 set smartindent
 set nowrap
 set noswapfile
@@ -117,7 +121,8 @@ noremap <leader>p p
 xnoremap y "+ygv<esc>
 " redo
 nnoremap U <C-r>
-nnoremap Q <nop>
+" no highlight
+nnoremap Q :noh<CR>
 " sane scroll
 nnoremap <C-u> Hzz
 nnoremap <C-d> Lzz
@@ -136,8 +141,10 @@ nnoremap <leader>sw :w !sudo tee > /dev/null %<CR>
 nnoremap <leader>sp :set paste<CR>
 " set copy
 nnoremap <leader>sc :set nonumber norelativenumber signcolumn=no wrap<CR>
-" enter is not useless
-nnoremap <CR> viw
+" ctrl-s save
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
 " easy motion
 noremap s <leader><leader>w
 noremap S <leader><leader>b
