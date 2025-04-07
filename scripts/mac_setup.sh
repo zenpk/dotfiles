@@ -5,12 +5,12 @@ defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 3
 
 # proxy on
-networksetup -setwebproxy Wi-Fi 127.0.0.1 8080
-networksetup -setsecurewebproxy Wi-Fi 127.0.0.1 8080
+networksetup -setwebproxy Wi-Fi 127.0.0.1 1080
+networksetup -setsecurewebproxy Wi-Fi 127.0.0.1 1080
 networksetup -setwebproxystate Wi-Fi on
 networksetup -setsecurewebproxystate Wi-Fi on
-export http_proxy="http://127.0.0.1 8080"
-export https_proxy="http://127.0.0.1 8080"
+export http_proxy="http://127.0.0.1:1080"
+export https_proxy="http://127.0.0.1:1080"
 
 # clear proxy
 networksetup -setwebproxystate Wi-Fi off

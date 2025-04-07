@@ -79,6 +79,18 @@ function fcd () {
     done
 }
 
+function pn () {
+    export http_proxy="http://127.0.0.1:1080"
+    export https_proxy="http://127.0.0.1:1080"
+    echo "done"
+}
+
+function pf () {
+    export http_proxy=""
+    export https_proxy=""
+    echo "done"
+}
+
 # https://www.reddit.com/r/zsh/comments/wq4mq8/zsh_history_isnt_working/
 export HISTFILE=$HOME/.zsh_history # location of the history file
 export HISTSIZE=2000 # current session's history limit, also following this https://unix.stackexchange.com/a/595475 $HISTSIZE should be at least 20% bigger than $SAVEHIST 
