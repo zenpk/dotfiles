@@ -1,0 +1,6 @@
+{
+	"settings": {
+		"cSpell.minWordLength": 5,
+		"cSpell.words": ["zenpk", "gopls"]
+	}
+}

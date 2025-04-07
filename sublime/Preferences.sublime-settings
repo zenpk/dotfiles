@@ -1,0 +1,35 @@
+{
+	"ignored_packages": ["Vintage",
+	],
+
+	// appearance
+	"font_face": "JetBrainsMonoNL NFM",
+	"font_size": 11,
+	"hide_new_tab_button": true,
+	"relative_line_numbers": true,
+
+	// behavior
+	"index_files": true,
+	"scroll_context_lines": 10,
+	"word_wrap": false,
+	"save_on_focus_lost": false,
+	"neovintageous_build_version": 13200,
+    "vintageous_highlighted_yank_duration": 300,
+    "vintageous_handle_keys": {
+	    "<C-w>": false,
+	    "<C-e>": false,
+	    "<C-a>": false,
+	    "<C-s>": false,
+	    "<C-f>": false,
+	    "<C-h>": false,
+	    "<C-z>": false,
+	    "<C-x>": false,
+	    "<C-c>": false,
+	    "<C-v>": false,
+	    "<C-b>": false,
+	    "<C-p>": true,
+	    "<C-n>": true,
+	},
+	"translate_tabs_to_spaces": true,
+	"theme": "Default Dark.sublime-theme",
+}
