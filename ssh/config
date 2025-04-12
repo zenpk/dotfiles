@@ -8,3 +8,7 @@ Host my
     RequestTTY yes
     ForwardX11 yes
     ForwardX11Trusted yes
+
+Host github.com
+    Hostname ssh.github.com
+    Port 443
