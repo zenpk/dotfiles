@@ -94,7 +94,6 @@ set nobackup
 set undofile
 set undodir=$HOME/.vim/undo
 set updatetime=50
-set signcolumn=yes
 set clipboard=
 
 map <space> <leader>

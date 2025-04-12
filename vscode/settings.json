@@ -85,7 +85,6 @@
     "vscodevim.vim": 1
   },
 
-  "liveServer.settings.donotShowInfoMsg": true,
   "settingsSync.keybindingsPerPlatform": false,
   "vim.vimrc.enable": true,
   "vim.history": 5,
@@ -106,9 +105,8 @@
     "<C-u>": true,
     "<C-s>": false,
     "<C-z>": false,
-    // https://github.com/VSCodeVim/Vim/issues/8200
-    "<C-o>": false,
-    "<C-i>": false
+    "<C-o>": true,
+    "<C-i>": true
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -174,14 +172,6 @@
       // next [d]ebug info
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["m"],
-      "commands": ["bookmarks.toggleLabeled"]
-    },
-    {
-      "before": ["`"],
-      "commands": ["bookmarks.listFromAllFiles"]
     },
     {
       // [g]enerate [p]rint
@@ -326,15 +316,9 @@
     "editor.defaultFormatter": "golang.go",
     "editor.formatOnSave": false
   },
-  "go.toolsManagement.autoUpdate": true,
+  "go.toolsManagement.autoUpdate": false,
   "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
-
-  "remote.SSH.remotePlatform": {
-    "vultr": "linux",
-    "mac": "macOS",
-    "my": "linux"
-  },
 
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

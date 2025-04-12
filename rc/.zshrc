@@ -47,7 +47,7 @@ function fcd () {
                         /usr/bin/file "$path"
                         ;;
                     *)
-                        /bin/bat "$path"
+                        /bin/cat "$path"
                         ;;
                 esac
             else
@@ -106,7 +106,6 @@ unsetopt flow_control
 bindkey "^q" fzf-cd-widget
 
 export FZF_DEFAULT_OPTS="--cycle --no-mouse --no-height --layout=default --bind='ctrl-p:up,ctrl-n:down,ctrl-k:preview-up,ctrl-j:preview-down,tab:toggle-out' --preview-window=wrap"
-export BAT_THEME="OneHalfDark"
 export LUA_PATH="$HOME/.config/nvim/?.lua;C:\\Users\\$(whoami)\\AppData\\Local\\nvim\\?.lua;;"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
