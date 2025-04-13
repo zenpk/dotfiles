@@ -10,6 +10,9 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # Linux only
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+# build tools manager
+eval "$(mise activate zsh)"
+
 source <(fzf --zsh)
 autoload -U compinit; compinit
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
@@ -110,7 +113,3 @@ export LUA_PATH="$HOME/.config/nvim/?.lua;C:\\Users\\$(whoami)\\AppData\\Local\\
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion

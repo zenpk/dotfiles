@@ -1,1 +1,3 @@
-not only dotfiles
+Beyond dotfiles
+
+Feel free to copy anything you like
