@@ -90,6 +90,7 @@
   "vim.history": 5,
   "vim.foldfix": true,
   "vim.leader": " ",
+  "vim.showMarksInGutter": true,
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnmqwertzxcvbasdgjf",
   "vim.easymotionMarkerForegroundColorOneChar": "#fcc77c",
@@ -98,7 +99,7 @@
   "vim.surround": true,
   "vim.camelCaseMotion.enable": true,
   "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.duration": 200,
+  "vim.highlightedyank.duration": 300,
   "vim.highlightedyank.color": "rgba(153, 187, 221, 0.5)",
   "vim.handleKeys": {
     "<C-d>": true,
@@ -354,5 +355,7 @@
     "textMateRules": []
   },
   "redhat.telemetry.enabled": false,
-  "chat.commandCenter.enabled": false
+  "yaml.maxItemsComputed": 10000,
+  "chat.commandCenter.enabled": false,
+  "security.allowedUNCHosts": ["wsl$", "wsl.localhost"]
 }

@@ -10,9 +10,6 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 # Linux only
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# build tools manager
-eval "$(mise activate zsh)"
-
 source <(fzf --zsh)
 autoload -U compinit; compinit
 source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
