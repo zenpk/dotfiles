@@ -12,6 +12,7 @@ NumLock::#Space
 #Left::#^Left
 #Right::#^Right
 ^[::Esc
+RControl::MButton
 
 
 ; https://www.autohotkey.com/boards/viewtopic.php?t=9701
