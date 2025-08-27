@@ -12,8 +12,12 @@ NumLock::#Space
 #Left::#^Left
 #Right::#^Right
 ^[::Esc
-RControl::MButton
 
+; RControl + pen touch as middle mouse
+RControl::return
+#HotIf GetKeyState("RControl", "p")
+    LButton::MButton
+#HotIf
 
 ; https://www.autohotkey.com/boards/viewtopic.php?t=9701
 ; This should be replaced by whatever your native language is. See 
