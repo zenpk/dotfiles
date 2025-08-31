@@ -5,6 +5,15 @@ SetNumLockState "AlwaysOn"
 Home::RButton
 PgUp::WheelUp
 PgDn::WheelDown
+; Less scroll (about 1/2)
+NumpadAdd:: {
+    DllCall("mouse_event", "UInt", 0x0800, "UInt", 0, "UInt", 0, "UInt", -60, "UInt", 0)
+    return
+}
+NumpadSub:: {
+    DllCall("mouse_event", "UInt", 0x0800, "UInt", 0, "UInt", 0, "UInt", 60, "UInt", 0)
+    return
+}
 
 End::^c
 Insert::^v
@@ -13,9 +22,9 @@ NumLock::#Space
 #Right::#^Right
 ^[::Esc
 
-; RControl + pen touch as middle mouse
-RControl::return
-#HotIf GetKeyState("RControl", "p")
+; Numpad multiply + pen touch as middle mouse
+NumpadMult::return
+#HotIf GetKeyState("NumpadMult", "p")
     LButton::MButton
 #HotIf
 

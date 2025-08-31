@@ -498,7 +498,31 @@
         },
         {
           "from": {
-            "key_code": "right_option"
+            "key_code": "keypad_plus"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "vertical_wheel": 32
+              }
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "keypad_hyphen"
+          },
+          "to": [
+            {
+              "mouse_key": {
+                "vertical_wheel": -32
+              }
+            }
+          ]
+        },
+        {
+          "from": {
+            "key_code": "keypad_asterisk"
           },
           "to": [
             {

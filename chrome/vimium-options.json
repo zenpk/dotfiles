@@ -1,11 +1,7 @@
 {
-  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap gg scrollToTop\nmap G scrollToBottom\nmap yy copyCurrentUrl\nmap i enterInsertMode\nmap gi focusInput\nmap s LinkHints.activateMode\nmap S LinkHints.activateModeToOpenInNewTab\nmap t Vomnibar.activateTabSelection\nmap n performFind\nmap N performBackwardsFind\nmap - visitPreviousTab\nmap <a-p> togglePinTab\nmap <a-m> toggleMuteTab\nmap ? showHelp",
+  "keyMappings": "unmapAll\nmap j scrollDown\nmap k scrollUp\nmap gg scrollToTop\nmap G scrollToBottom\nmap yy copyCurrentUrl\nmap i enterInsertMode\nmap gi focusInput\nmap s LinkHints.activateMode\nmap S LinkHints.activateModeToOpenInNewTab\nmap t Vomnibar.activateTabSelection\nmap <a-p> togglePinTab\nmap <a-m> toggleMuteTab\nmap ? showHelp",
   "settingsVersion": "2.1.2",
   "exclusionRules": [
-    {
-      "passKeys": "",
-      "pattern": "https?://www.soundslice.com/*"
-    },
     {
       "passKeys": "",
       "pattern": "https?://coderbyte.com/*"
@@ -25,6 +21,11 @@
     {
       "passKeys": "",
       "pattern": "https?://www.keyboardtester.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.songsterr.com/*"
     }
   ]
 }
+
