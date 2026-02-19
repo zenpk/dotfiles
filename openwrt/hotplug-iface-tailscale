@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# We only care when an interface comes UP
+if [ "$ACTION" = "ifup" ]; then
+    # 1. Find the physical interface used for the default gateway
+    # This 'awk' command looks for the word 'dev' and prints the word immediately following it
+    NET_IFACE=$(ip -o route get 8.8.8.8 | awk '{for(i=1;i<=NF;i++) if($i=="dev") print $(i+1)}')
+
+    # 2. Apply optimizations to the detected interface
+    if [ -n "$NET_IFACE" ]; then
+        /usr/sbin/ethtool -K "$NET_IFACE" rx-udp-gro-forwarding on rx-gro-list off
+
+        # 3. Special Case: If the interface is pppoe-wan, also try to apply it to eth1
+        # (Since virtual interfaces often pass the hardware work to the physical port)
+        if [ "$NET_IFACE" = "pppoe-wan" ]; then
+             /usr/sbin/ethtool -K eth1 rx-udp-gro-forwarding on rx-gro-list off
+        fi
+
+        logger -t tailscale-hotplug "Optimized $NET_IFACE for $INTERFACE"
+    fi
+fi
