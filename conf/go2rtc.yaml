@@ -1,0 +1,27 @@
+# See also: https://github.com/AlexxIT/go2rtc/blob/master/README.md
+---
+
+log:
+  level: info  # default level
+  # api: trace
+  # exec: debug
+  # ngrok: info
+  # rtsp: warn
+  # streams: error
+  # webrtc: fatal
+
+api:
+  listen: ":1984"
+
+rtsp:
+  listen: ":8554"
+
+webrtc:
+  listen: ":8555"  # external TCP/UDP port
+
+ffmpeg:
+  bin: /root/ffmpeg-7.0.2-arm64-static/ffmpeg  # path to ffmpeg binary
+
+streams:
+  my_h264_cam:
+    - exec:/root/ffmpeg-7.0.2-arm64-static/ffmpeg -f v4l2 -input_format mjpeg -video_size 640x480 -framerate 30 -i /dev/video0 -c:v libx264 -preset ultrafast -tune zerolatency -b:v 1M -pix_fmt yuv420p -f rtsp {output}
