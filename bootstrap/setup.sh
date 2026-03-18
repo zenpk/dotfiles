@@ -11,11 +11,6 @@ sudo ufw allow "Nginx Full"
 
 # tmux
 cat << EOF > ~/.tmux.conf
-# change prefix to C-a
-unbind C-b
-set-option -g prefix C-a
-bind-key C-a send-prefix
-
 set -sg escape-time 10 # prevent 0;10;1c
 # set-environment -g TZ UTC
 # address vim mode switching delay (http://superuser.com/a/252717/65504)
@@ -49,7 +44,7 @@ bind -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 # easier and faster switching between next/prev window
 bind -r C-p previous-window
 bind -r C-n next-window
-# above bindings enhance the default prefix + p and prefix + n bindings by allowing you to hold Ctrl and repeat a + p/a + n (if your prefix is C-a), which is a lot quicker.
+# above bindings enhance the default prefix + p and prefix + n bindings by allowing you to hold Ctrl and repeat b + p/b + n, which is a lot quicker.
 bind -r a last-window
 
 # list of plugins
