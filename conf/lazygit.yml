@@ -1,0 +1,32 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#61afef"
+      - bold
+    inactiveBorderColor:
+      - "#abb2bf"
+    optionsTextColor:
+      - "#56b6c2"
+    selectedLineBgColor:
+      - "#3e4452"
+    selectedRangeBgColor:
+      - "#3e4452"
+    cherryPickedCommitFgColor:
+      - "#98c379"
+    cherryPickedCommitBgColor:
+      - "#c678dd"
+    markedBaseCommitFgColor:
+      - "#e06c75"
+    unstagedChangesColor:
+      - "#e06c75"
+    defaultFgColor:
+      - "#abb2bf"
+    allBranchesLogGraphColors:
+      - "#61afef"
+      - "#c678dd"
+      - "#98be65"
+      - "#e5c07b"
+      - "#e06c75"
+      - "#56b6c2"
+git:
+  branchLogCmd: sh -c 'git log --graph --color=always --abbrev-commit --decorate --oneline {{branchName}} -- | sed -e s/\\*/●/ -e s/\\|/│/'
