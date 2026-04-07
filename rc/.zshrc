@@ -100,6 +100,8 @@ setopt APPENDHISTORY # ensures that each command entered in the current session 
 
 alias ll="ls -l --color=auto"
 alias la="ls -la --color=auto"
+alias lz="lazygit"
+alias lzd="lazydocker"
 
 # https://stackoverflow.com/questions/16727459/what-makes-ctrlq-work-in-zsh
 unsetopt flow_control
