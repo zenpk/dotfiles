@@ -112,3 +112,14 @@ export LUA_PATH="$HOME/.config/nvim/?.lua;C:\\Users\\$(whoami)\\AppData\\Local\\
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+_nvm_lazy_load() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { _nvm_lazy_load; nvm "$@" }
+node() { _nvm_lazy_load; node "$@" }
+npm() { _nvm_lazy_load; npm "$@" }
+npx() { _nvm_lazy_load; npx "$@" }
