@@ -17,7 +17,15 @@ source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="$HOME/go/bin:/usr/local/bin:$HOME/.local/bin:/usr/local/go/bin:$PATH"
+# Deduplicate PATH
+typeset -U PATH path
+path=(
+  "$HOME/go/bin"
+  "/usr/local/go/bin"
+  "/usr/local/bin"
+  "$HOME/.local/bin"
+  $path
+)
 
 # fzf file explorer
 function fcd () {
