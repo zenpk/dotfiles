@@ -20,10 +20,10 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Deduplicate PATH
 typeset -U PATH path
 path=(
-  "$HOME/go/bin"
-  "/usr/local/go/bin"
   "/usr/local/bin"
   "$HOME/.local/bin"
+  "$HOME/go/bin"
+  "/usr/local/go/bin"
   $path
 )
 
