@@ -26,7 +26,7 @@
   sign-ssh = "!f() { if [ -z \"$1\" ]; then echo \"please input the public key name\"; return; fi; git config gpg.format ssh && git config user.signingkey \"~/.ssh/$1.pub\" && git config commit.gpgsign true; }; f"
   lg = "log --graph --all --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'"
   lg-one = "log --graph --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
-  count-lines = "log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }' #"
+  count-lines = "!f() { git log --author=\"${1:-$(git config user.name)}\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; } END { printf \"added lines: %s, removed lines: %s\\n\", add, subs }'; }; f"
   sw = "!f() { if [ -n \"$1\" ]; then git switch $1; return; fi; branch=$(git branch -a | fzf --preview-window=default --preview='git lg {1}'); if [ -n \"$branch\" ]; then git switch $(echo $branch | xargs); fi; }; f"
   br = "!f() { branch=$(git branch -a | fzf --multi --preview-window=default --preview='git lg {1}'); echo $branch; }; f"
   df = "!f() { branch=\"${1:-HEAD}\"; git diff --name-status \"$branch\" | git color-status \"$branch\" | fzf --ansi --multi --with-nth=1,2 --delimiter='\t' --preview='git diff {3} --color -- {2} | tail -n +5' | awk -F'\t' '{ print $2 }' | xargs; }; f"
