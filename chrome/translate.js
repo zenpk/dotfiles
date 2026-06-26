@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         My
+// @name         Google Translate Shortcut
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  useful shortcuts
+// @description  Google Translate Shortcut
 // @author       You
 // @match        *://*/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
@@ -38,4 +38,3 @@ width=1280,height=480,left=100,top=100`;
         open("https://translate.google.com/?sl=auto&tl=zh-CN&text=" + text + "&op=translate", "translation", params);
     }
 }
-
