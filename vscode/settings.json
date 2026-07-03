@@ -1,8 +1,8 @@
 {
   "window.restoreWindows": "none",
   "window.zoomLevel": 1,
-  "window.commandCenter": false,
   "window.restoreFullscreen": true,
+  "window.commandCenter": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -12,7 +12,7 @@
   "files.autoSave": "onFocusChange",
   "files.exclude": {
     "**/.git": true,
-    "**/.gitignore": false
+    "**/.gitignore": false,
   },
 
   "git.ignoreRebaseWarning": true,
@@ -25,12 +25,12 @@
   "terminal.integrated.profiles.windows": {
     "Git Bash": {
       "source": "Git Bash",
-      "icon": "terminal-bash"
+      "icon": "terminal-bash",
     },
     "pwsh": {
       "icon": "terminal-powershell",
-      "path": "Windows.Terminal.PowershellCore"
-    }
+      "path": "Windows.Terminal.PowershellCore",
+    },
   },
   "terminal.integrated.defaultProfile.windows": "pwsh",
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -47,7 +47,7 @@
     "package-lock.json": true,
     "yarn.lock": true,
     "LICENSE": true,
-    "**/myfiles": false
+    "**/myfiles": false,
   },
 
   "editor.tabCompletion": "on",
@@ -71,18 +71,21 @@
   "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToTypeDefinition",
   "workbench.colorTheme": "JetMind",
   "workbench.startupEditor": "none",
-  "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "single",
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 5,
+  "workbench.editor.enablePreview": false,
   "workbench.tree.indent": 16,
   "workbench.layoutControl.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.activityBar.compact": true,
+  "workbench.navigationControl.enabled": false,
+  "workbench.browser.showInTitleBar": false,
   "debug.console.fontSize": 13,
 
   "extensions.ignoreRecommendations": true,
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
   },
 
   "settingsSync.keybindingsPerPlatform": false,
@@ -107,72 +110,72 @@
     "<C-s>": false,
     "<C-z>": false,
     "<C-o>": true,
-    "<C-i>": true
+    "<C-i>": true,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["u"],
-      "commands": ["undo"]
+      "commands": ["undo"],
     },
     {
       "before": ["U"],
-      "commands": ["redo"]
+      "commands": ["redo"],
     },
     {
       "before": ["K"],
-      "commands": ["editor.action.showHover"]
+      "commands": ["editor.action.showHover"],
     },
     {
       "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatDocument"]
+      "commands": ["editor.action.formatDocument"],
     },
     {
       "before": ["<leader>", "o", "i"],
-      "commands": ["editor.action.organizeImports"]
+      "commands": ["editor.action.organizeImports"],
     },
     {
       "before": ["<leader>", "q", "f"],
-      "commands": ["editor.action.quickFix"]
+      "commands": ["editor.action.quickFix"],
     },
     {
       "before": ["<leader>", "r", "n"],
-      "commands": ["editor.action.rename"]
+      "commands": ["editor.action.rename"],
     },
     {
       "before": ["<leader>", "%"],
-      "commands": ["editor.emmet.action.matchTag"]
+      "commands": ["editor.emmet.action.matchTag"],
     },
     {
       "before": ["g", "i"],
-      "commands": ["editor.action.goToImplementation"]
+      "commands": ["editor.action.goToImplementation"],
     },
     {
       "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
+      "commands": ["editor.action.goToReferences"],
     },
     // goto [d]efinition (editor.action.revealDefinition) is built in Vim plugin
     {
       "before": ["g", "t"],
-      "commands": ["editor.action.goToTypeDefinition"]
+      "commands": ["editor.action.goToTypeDefinition"],
     },
     {
       // goto [b]readcrumbs
       "before": ["g", "b"],
-      "commands": ["breadcrumbs.focusAndSelect"]
+      "commands": ["breadcrumbs.focusAndSelect"],
     },
     {
       "before": ["g", "c"],
-      "commands": ["editor.showCallHierarchy"]
+      "commands": ["editor.showCallHierarchy"],
     },
     {
       // prev [d]ebug info
       "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
+      "commands": ["editor.action.marker.prev"],
     },
     {
       // next [d]ebug info
       "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "commands": ["editor.action.marker.next"],
     },
     {
       // [g]enerate [p]rint
@@ -180,9 +183,9 @@
       "commands": [
         {
           "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["print"]
-        }
-      ]
+          "args": ["print"],
+        },
+      ],
     },
     {
       // [g]enerate [l]og
@@ -190,9 +193,9 @@
       "commands": [
         {
           "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["log"]
-        }
-      ]
+          "args": ["log"],
+        },
+      ],
     },
     {
       // [g]enerate [e]rror
@@ -200,21 +203,21 @@
       "commands": [
         {
           "command": "snippet-on-file-type.insertSnippetBasedOnFileType",
-          "args": ["error"]
-        }
-      ]
-    }
+          "args": ["error"],
+        },
+      ],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatSelection"]
+      "commands": ["editor.action.formatSelection"],
     },
     {
       // goto [b]readcrumbs
       "before": ["g", "b"],
-      "commands": ["breadcrumbs.focusAndSelect"]
-    }
+      "commands": ["breadcrumbs.focusAndSelect"],
+    },
   ],
 
   "snippet-on-file-type.defineSnippets": [
@@ -224,29 +227,36 @@
         "javascriptreact",
         "typescript",
         "typescriptreact",
-        "vue"
+        "vue",
       ],
       "snippets": {
         "print": "console.log($1);",
         "log": "console.log(`========== $1 ==========`);",
-        "error": "try {\n  $1\n} catch (e) {\n  console.log(e);\n}"
-      }
+        "error": "try {\n  $1\n} catch (e) {\n  console.log(e);\n}",
+      },
     },
     {
       "fileTypes": ["go"],
       "snippets": {
         "print": "fmt.Println($1)\n",
         "log": "fmt.Println(\"========== $1 ==========\")",
-        "error": "if err != nil {\n    return $1err\n}"
-      }
+        "error": "if err != nil {\n    return nil, err\n}",
+      },
     },
     {
       "fileTypes": ["python"],
       "snippets": {
         "print": "print($1)",
-        "log": "print(\"========== $1 ==========\")"
-      }
-    }
+        "log": "print(\"========== $1 ==========\")",
+      },
+    },
+    {
+      "fileTypes": ["php"],
+      "snippets": {
+        "print": "info(json_encode($$1, JSON_PRETTY_PRINT));",
+        "log": "info('========== $1 ==========');",
+      },
+    },
   ],
 
   "cSpell.userWords": ["zenpk", "AUTOINCREMENT", "pwsh"],
@@ -257,10 +267,9 @@
   "yaclock.showDate": true,
   "gitTreeCompare.diffMode": "merge",
   "gitTreeCompare.showCheckboxes": true,
-  "excalidraw.theme": "light",
 
   "markdown.copyFiles.destination": {
-    "**/*": "./_attachments/${documentBaseName}_${fileName}"
+    "**/*": "./_attachments/${documentBaseName}_${fileName}",
   },
   "markdown.editor.drop.enabled": "always",
   "markdown.editor.filePaste.audioSnippet": "<audio src=\"${src}\" title=\"${title}\"></audio>",
@@ -276,7 +285,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
+      "italic": false,
     },
     {
       "tag": "//",
@@ -285,7 +294,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
+      "italic": false,
     },
     {
       "tag": "todo",
@@ -294,7 +303,7 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
+      "italic": false,
     },
     {
       "tag": "note",
@@ -303,59 +312,102 @@
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
-    }
+      "italic": false,
+    },
   ],
 
   "gopls": {
     "ui.semanticTokens": true,
     "ui.diagnostic.analyses": {
-      "unusedparams": true
-    }
+      "unusedparams": true,
+    },
   },
   "[go]": {
     "editor.defaultFormatter": "golang.go",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
-  "go.toolsManagement.autoUpdate": false,
+  "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
   "go.formatTool": "gofmt",
 
+  "black-formatter.args": ["--config", "${workspaceFolder}/pyproject.toml"],
+  "phpactor.executablePath": "/opt/homebrew/bin/php",
+  "phpfmt.passes": [
+    "AlignDoubleArrow",
+    "AlignPHPCode",
+    "AlignConstVisibilityEquals",
+    "AutoSemicolon",
+    "ConvertOpenTagWithEcho",
+    "AlignEquals",
+    "MergeNamespaceWithOpenTag",
+    "RemoveSemicolonAfterCurly",
+    "RestoreComments",
+    "ShortArray",
+    "ExtraCommaInArray",
+    "AlignDoubleSlashComments",
+    "IndentTernaryConditions",
+    "IndentPipeOperator",
+  ],
+
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[php]": {
+    "editor.defaultFormatter": "kokororin.vscode-phpfmt",
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "editor.semanticTokenColorCustomizations": {
-    "enabled": true
+    "enabled": true,
   },
   "editor.tokenColorCustomizations": {
-    "textMateRules": []
+    "textMateRules": [],
   },
   "redhat.telemetry.enabled": false,
   "yaml.maxItemsComputed": 10000,
   "chat.commandCenter.enabled": false,
-  "security.allowedUNCHosts": ["wsl$", "wsl.localhost"]
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://biomejs.dev": true,
+  },
 }
